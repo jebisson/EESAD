@@ -1,16 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+// If you're using React components, also add:
+// import react from '@astrojs/react';
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  site: 'https://jebisson.github.io/EESAD',
+  base: '/EESAD',
+  integrations: [
+    tailwind({ applyBaseStyles: true }),
+    // react(),
+  ],
 });
-
-export default {
-  site: "https://jebisson.github.io/EESAD",
-  base: "/EESAD",
-};
