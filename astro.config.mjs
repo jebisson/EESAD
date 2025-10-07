@@ -9,3 +9,8 @@ export default defineConfig({
     plugins: [tailwindcss()]
   }
 });
+
+export default {
+  site: "https://jebisson.github.io/eesad",
+  base: "/eesad",
+};
