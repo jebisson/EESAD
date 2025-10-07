@@ -11,6 +11,6 @@ export default defineConfig({
 });
 
 export default {
-  site: "https://jebisson.github.io/eesad",
-  base: "/eesad",
+  site: "https://jebisson.github.io/EESAD",
+  base: "/EESAD",
 };
