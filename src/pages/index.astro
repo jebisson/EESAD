@@ -1,16 +1,238 @@
 ---
+import "../styles/global.css";
 
+
+/** ÉÉSAD brand colors */
+const BLUE = "#20689B";   // primary
+const GRAY = "#555555";   // body text
+
+/** 15 points: title + lead + bullets (from your document) */
+const points = [
+  {
+    t: "Inventaire et désuétude matérielle / système d’exploitation",
+    lead:
+      "L’utilisation de systèmes obsolètes ou en fin de vie représente un risque : une faille ne peut être corrigée sans mises à jour.",
+    bullets: [
+      "Inventaire à jour des actifs informationnels.",
+      "Plan de rehaussement/délestage des systèmes d’exploitation désuets.",
+      "Plan de mitigation des vulnérabilités en attendant le rehaussement.",
+      "Plan de rehaussement/délestage des équipements mobiles, télécom et sécurité désuets.",
+    ],
+  },
+  {
+    t: "Détection des vulnérabilités et application des correctifs",
+    lead:
+      "Rigueur des mises à jour pour rester protégé, y compris postes VPN et correctifs critiques (0-day).",
+    bullets: [
+      "Plan de détection des vulnérabilités pour les actifs internes.",
+      "Plan d’application rapide des correctifs (OS et logiciels).",
+      "Stratégie de mise à jour automatisée des postes hors site.",
+      "Validation de conformité des postes non gérés se connectant au VPN.",
+    ],
+  },
+  {
+    t: "Déployer un antivirus à jour et moderne (EDR)",
+    lead:
+      "Un EDR surveille en temps réel, collecte des signaux et peut bloquer/remédier à l’activité malicieuse.",
+    bullets: [
+      "Antivirus/EDR moderne en fonction sur tous les serveurs.",
+      "Antivirus/EDR moderne en fonction sur tous les postes de travail.",
+    ],
+  },
+  {
+    t: "Authentification multi-facteurs (MFA)",
+    lead:
+      "Les mots de passe se compromettent facilement : l’AMF renforce l’identité à la connexion.",
+    bullets: [
+      "MFA implantée pour l’accès aux systèmes critiques exposés à Internet.",
+    ],
+  },
+  {
+    t: "Copies de sauvegarde, tests de recouvrement et relève",
+    lead:
+      "Sauvegardes régulières, infrastructure isolée, plan de relève et exercices de recouvrement assurent la disponibilité.",
+    bullets: [
+      "Infra de sauvegarde isolée (ex. rançongiciel).",
+      "Plan de reprise documenté, connu, mis à jour.",
+      "Prises de copies quotidiennes.",
+      "Exercices de recouvrement périodiques.",
+    ],
+  },
+  {
+    t: "Solution de courriel sécurisée",
+    lead:
+      "Les échanges de données personnelles doivent être chiffrés et limités aux bons destinataires.",
+    bullets: [
+      "Solution de courriel sécurisé disponible.",
+      "Sensibiliser et former sur les échanges de données confidentielles.",
+    ],
+  },
+  {
+    t: "Balayage des vulnérabilités des applications externes",
+    lead:
+      "Avec la visibilité gouvernementale, la détection et le suivi des corrections sont faits par le CGCD.",
+    bullets: [
+      "Organisme inscrit au service de balayage du CGCD.",
+      "Processus continu pour corriger les lacunes découvertes.",
+    ],
+  },
+  {
+    t: "Journalisation et surveillance continue des systèmes exposés",
+    lead:
+      "Mettre en place détection d’attaques (credential stuffing, dictionnaire) pour alerter et bloquer.",
+    bullets: [
+      "Accès aux systèmes exposés journalisés.",
+      "Stratégie pour détecter/bloquer les tentatives de connexion anormales.",
+    ],
+  },
+  {
+    t: "Ajouter un dispositif CAPTCHA aux services d’authentification",
+    lead:
+      "CAPTCHA limite les connexions automatisées visant à deviner des identifiants.",
+    bullets: [
+      "Authentification aux services externes critiques protégée par CAPTCHA.",
+    ],
+  },
+  {
+    t: "Notifications sur accès et changements au compte",
+    lead:
+      "Toute connexion/modification de profil doit être signalée au titulaire.",
+    bullets: [
+      "Le système avise par notification tout changement au compte du citoyen.",
+    ],
+  },
+  {
+    t: "Transmission sécuritaire des informations (autre que le courriel)",
+    lead:
+      "Pour les données confidentielles, privilégier un mécanisme chiffré et direct entre citoyen et organisme.",
+    bullets: [
+      "Mettre à disposition un service de transfert sécurisé autre que le courriel.",
+    ],
+  },
+  {
+    t: "Campagnes de simulation à l’hameçonnage en continu",
+    lead:
+      "Former et sensibiliser aux menaces, mesurer l’impact potentiel sur l’organisme.",
+    bullets: [
+      "Campagnes continues et engageantes auprès des employés.",
+    ],
+  },
+  {
+    t: "Directive sur l’utilisation du courriel et d’Internet",
+    lead:
+      "Des directives claires et une procédure d’incident structurent la réponse aux menaces.",
+    bullets: [
+      "Directive interne : marche à suivre pour courriels malicieux, virus, autres menaces.",
+    ],
+  },
+  {
+    t: "Gestion des accès accordés aux utilisateurs",
+    lead:
+      "Moindre privilège et surveillance des activités : ligne de défense clé contre fuites et compromissions.",
+    bullets: [
+      "Processus d’ajout/révision/retrait des accès (mouvements de personnel).",
+      "Processus d’ajout/retrait des accès à privilèges élevés, révisé périodiquement.",
+      "Outil de journalisation des accès en place.",
+    ],
+  },
+  {
+    t: "Plan de sensibilisation du personnel",
+    lead:
+      "Former en continu : sécurité des mobiles, hameçonnage, virus/rançongiciels, ingénierie sociale.",
+    bullets: [
+      "Plan de formation continue en cybersécurité pour le personnel.",
+    ],
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ÉÉSAD — 15 Points de Sécurité</title>
+    <style>
+      /* Hover-to-reveal effect (no JS values here) */
+      .details {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all .35s ease;
+      }
+      .card:hover .details {
+        max-height: 480px;
+        opacity: 1;
+        margin-top: .5rem;
+      }
+    </style>
+  </head>
+
+
+
+  <!-- set text color with Tailwind, not JS vars -->
+  <body class="min-h-screen bg-gradient-to-br from-[#f5f7fa] via-[#e9f1f7] to-[#dfeaf4] text-[#555555]">
+  	<header class="bg-white shadow-sm border-t-4 border-[#20689B]">
+  		<div class="max-w-6xl mx-auto px-6 py-5 flex justify-center">
+   			 <img src="/eesad-logo.png" class="h-10" />
+  		</div>
+	</header>
+
+    <main class="mx-auto max-w-6xl px-6 py-10">
+      <!-- title color via Tailwind arbitrary color -->
+      <h1 class="text-3xl md:text-4xl font-extrabold text-center text-[#20689B]">
+        Faites de la cybersécurité un réflexe quotidien. 
+      </h1>
+	  <h2 class="text-2xl md:text-2xl font-extrabold text-center text-[#20689B] mt-8">
+		15 Points de Sécurité Informatique	
+	  </h2>
+      <p class="text-center mt-2 opacity-80">Survolez chaque point pour voir le détail</p>
+
+      <div class="mt-10 grid gap-5">
+        {points.map((p, i) => (
+          <section
+  class="card cursor-pointer rounded-2xl border border-gray-200 bg-white p-6 transition
+         hover:border-[#20689B]
+         hover:shadow-[0_8px_24px_rgba(32,104,155,0.15)]"
+>
+  <div class="flex items-start gap-4">
+    <!-- Number badge with semi-circle halo -->
+    <div class="relative">
+      <!-- semi-circle halo -->
+      <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-8 rounded-t-full
+                  bg-[#E7F2FA] shadow-[0_8px_18px_rgba(32,104,155,0.25)]"></div>
+
+      <!-- circular badge -->
+      <div class="relative grid place-items-center w-18 h-18 rounded-full bg-white
+                  ring-4 ring-[#20689B]/30 shadow">
+        <span class="text-5xl font-extrabold text-[#20689B] leading-none">
+          {i + 1}
+        </span>
+      </div>
+    </div>
+
+    <!-- Title + details -->
+    <div class="flex-1">
+      <h2 class="text-1xl md:text-3xl font-extrabold text-[#20689B]">{p.t}</h2>
+      <div class="details">
+        <p class="mt-3">{p.lead}</p>
+        {p.bullets?.length && (
+          <ul class="list-disc ml-6 mt-3 space-y-1">
+            {p.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+        ))}
+      </div>
+    </main>
+
+    <footer class="mt-16 bg-gradient-to-r from-[#20689B] to-[#1A517B] text-white text-center py-6">
+  		<p>© {new Date().getFullYear()} ÉÉSAD — Sécurité Informatique</p>
+  		<p class="opacity-70 text-sm mt-1">Faites de la cybersécurité un réflexe quotidien.</p>
+	</footer>
+
+  </body>
 </html>
