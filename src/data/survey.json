@@ -1,0 +1,39 @@
+[
+  {
+    "id": "org_name",
+    "section": "Organisation",
+    "question": "Nom de l’organisation",
+    "type": "text",
+    "required": true,
+    "placeholder": "EÉSAD Exemple"
+  },
+  {
+    "id": "contact_email",
+    "section": "Organisation",
+    "question": "Courriel de contact",
+    "type": "email",
+    "required": true,
+    "placeholder": "contact@exemple.org"
+  },
+  {
+    "id": "w11_migration_ready",
+    "section": "Parc informatique",
+    "question": "Migration vers Windows 11 amorcée?",
+    "type": "radio",
+    "required": true,
+    "options": ["Oui", "Non", "En cours"]
+  },
+  {
+    "id": "os_mix",
+    "section": "Parc informatique",
+    "question": "Systèmes utilisés",
+    "type": "checkbox",
+    "options": ["Windows 10", "Windows 11", "macOS", "Linux"]
+  },
+  {
+    "id": "notes",
+    "section": "Commentaires",
+    "question": "Commentaires additionnels",
+    "type": "textarea"
+  }
+]

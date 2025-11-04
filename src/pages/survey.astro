@@ -1,0 +1,160 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import survey from "../data/survey.json";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Questionnaire TI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-900 text-slate-100">
+    <!-- Header (same vibe as your other page) -->
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur border-b border-slate-800">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src={logo.src} alt="Logo" class="h-8 w-auto" />
+          <span class="font-semibold tracking-tight">Services TI</span>
+        </a>
+        <nav class="text-sm">
+          <a href="/" class="hover:text-white/90 text-slate-300">Accueil</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold tracking-tight">Questionnaire</h1>
+        <p class="text-slate-300 mt-2">
+          Remplissez ce formulaire. Les réponses seront envoyées par courriel à l’équipe TI.
+        </p>
+      </div>
+
+      <form id="surveyForm" class="space-y-8 bg-slate-800/60 border border-slate-700 p-6 rounded-2xl shadow-2xl">
+        {
+          survey.map((q, idx) => (
+            <section class="space-y-2" data-id={q.id || `q_${idx}`}>
+              {q.section && (
+                <h2 class="text-sm uppercase tracking-wider text-slate-400">{q.section}</h2>
+              )}
+
+              <label for={q.id || `q_${idx}`} class="block text-base font-medium">
+                {q.question} {q.required && <span class="text-rose-400">*</span>}
+              </label>
+
+              {q.help && <p class="text-sm text-slate-400">{q.help}</p>}
+
+              {/* Inputs */}
+              {q.type === "text" && (
+                <input id={q.id || `q_${idx}`} name={q.id || `q_${idx}`}
+                  placeholder={q.placeholder || ""} required={q.required}
+                  class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+              )}
+
+              {q.type === "email" && (
+                <input type="email" id={q.id || `q_${idx}`} name={q.id || `q_${idx}`}
+                  placeholder={q.placeholder || ""} required={q.required}
+                  class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+              )}
+
+              {q.type === "number" && (
+                <input type="number" id={q.id || `q_${idx}`} name={q.id || `q_${idx}`}
+                  placeholder={q.placeholder || ""} required={q.required}
+                  class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+              )}
+
+              {q.type === "textarea" && (
+                <textarea id={q.id || `q_${idx}`} name={q.id || `q_${idx}`}
+                  placeholder={q.placeholder || ""} required={q.required}
+                  class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 min-h-28 focus:outline-none focus:ring-2 focus:ring-slate-400"></textarea>
+              )}
+
+              {q.type === "select" && (
+                <select id={q.id || `q_${idx}`} name={q.id || `q_${idx}`} required={q.required}
+                  class="w-full rounded-xl border border-slate-600 bg-slate-900 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400">
+                  <option value="">Choisir…</option>
+                  {q.options?.map(opt => <option value={opt}>{opt}</option>)}
+                </select>
+              )}
+
+              {q.type === "radio" && (
+                <div class="space-y-1">
+                  {q.options?.map(opt => (
+                    <label class="flex items-center gap-2">
+                      <input type="radio" name={q.id || `q_${idx}`} value={opt} required={q.required}
+                        class="accent-slate-200" />
+                      <span>{opt}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+
+              {q.type === "checkbox" && (
+                <div class="space-y-1">
+                  {q.options?.map(opt => (
+                    <label class="flex items-center gap-2">
+                      <input type="checkbox" name={q.id || `q_${idx}`} value={opt}
+                        class="accent-slate-200" />
+                      <span>{opt}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+            </section>
+          ))
+        }
+
+        <div class="flex items-center gap-3 pt-2">
+          <button type="submit" class="rounded-xl bg-slate-100 text-slate-900 px-4 py-2 font-medium hover:bg-white">
+            Envoyer
+          </button>
+          <p id="status" class="text-sm text-slate-300"></p>
+        </div>
+      </form>
+    </main>
+
+    <footer class="mt-16 border-t border-slate-800">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-400">
+        © {new Date().getFullYear()} — Services TI
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById("surveyForm");
+      const status = document.getElementById("status");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Build payload including arrays for checkbox groups
+        const fd = new FormData(form);
+        const data = {};
+        for (const [k, v] of fd.entries()) {
+          if (k in data) data[k] = Array.isArray(data[k]) ? [...data[k], v] : [data[k], v];
+          else data[k] = v;
+        }
+
+        status.textContent = "Envoi…";
+        try {
+          const res = await fetch("api/submit", {  // no leading slash
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+          if (res.ok) {
+            status.textContent = "Merci! Vos réponses ont été envoyées.";
+            form.reset();
+          } else {
+            status.textContent = "Erreur d’envoi.";
+          }
+        } catch (err) {
+          status.textContent = "Erreur réseau.";
+        }
+      });
+    </script>
+  </body>
+</html>
