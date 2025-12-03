@@ -1,0 +1,223 @@
+---
+import "../styles/global.css";
+import logoUrl from "../assets/eesad-logo.png?url";
+
+const points = [
+  {
+    t: "Inventaire et désuétude matérielle / système d’exploitation",
+    lead:
+      "Les systèmes obsolètes exposent l’organisation : une faille ne peut être corrigée sans mises à jour.",
+    bullets: [
+      "Inventaire à jour des actifs informationnels.",
+      "Plan de rehaussement/délestage des OS désuets.",
+      "Mesures de mitigation en attendant le rehaussement.",
+      "Rehaussement/délestage des équipements mobiles/ sécurité désuets."
+    ],
+  },
+  {
+    t: "Détection des vulnérabilités et application des correctifs",
+    lead:
+      "Rigueur des mises à jour (y compris postes VPN et correctifs critiques 0-day).",
+    bullets: [
+      "Détection continue des vulnérabilités internes.",
+      "Application rapide des correctifs (OS et logiciels).",
+      "Mises à jour automatisées pour les postes hors site.",
+      "Validation des postes non gérés se connectant au VPN."
+    ],
+  },
+  {
+    t: "Déployer un antivirus à jour et moderne (EDR)",
+    lead:
+      "Un EDR surveille en temps réel et bloque/remédie aux activités malicieuses.",
+    bullets: [
+      "EDR en fonction sur tous les serveurs.",
+      "EDR en fonction sur tous les postes de travail."
+    ],
+  },
+  {
+    t: "Authentification multi-facteurs (MFA)",
+    lead:
+      "L’AMF renforce l’identité pour les accès exposés à Internet.",
+    bullets: ["MFA active pour les services critiques externes."],
+  },
+  {
+    t: "Copies de sauvegarde, tests de recouvrement et relève",
+    lead:
+      "Sauvegardes régulières, isolement, plan de reprise et exercices.",
+    bullets: [
+      "Infrastructure de sauvegarde isolée.",
+      "Plan de reprise documenté, diffusé, à jour.",
+      "Copies quotidiennes.",
+      "Exercices de recouvrement périodiques."
+    ],
+  },
+  {
+    t: "Solution de courriel sécurisée",
+    lead:
+      "Chiffrez et contrôlez le partage de données personnelles.",
+    bullets: [
+      "Solution de courriel sécurisé en place.",
+      "Sensibilisation sur l’échange de données confidentielles."
+    ],
+  },
+  {
+    t: "Balayage des vulnérabilités des applications externes",
+    lead:
+      "Inscription au service CGCD et suivi des corrections.",
+    bullets: [
+      "Organisme inscrit au service de balayage du CGCD.",
+      "Processus continu de correction des lacunes."
+    ],
+  },
+  {
+    t: "Journalisation et surveillance des systèmes exposés",
+    lead:
+      "Détecter et bloquer les attaques (credential stuffing, dictionnaire).",
+    bullets: [
+      "Journalisation des accès aux systèmes exposés.",
+      "Détection/blocage des tentatives anormales."
+    ],
+  },
+  {
+    t: "CAPTCHA pour les services d’authentification",
+    lead:
+      "Réduit les connexions automatisées visant à deviner des identifiants.",
+    bullets: ["CAPTCHA pour l’authentification aux services externes critiques."],
+  },
+  {
+    t: "Notifications d’accès et de changements au compte",
+    lead:
+      "Informer le titulaire lors de connexions ou modifications de profil.",
+    bullets: ["Notifications automatiques des changements au compte du citoyen."]
+  },
+  {
+    t: "Transmission sécuritaire des informations (hors courriel)",
+    lead:
+      "Privilégier un transfert chifré et direct.",
+    bullets: ["Mettre à disposition un service de transfert sécurisé autre que le courriel."]
+  },
+  {
+    t: "Campagnes de simulation à l’hameçonnage en continu",
+    lead:
+      "Former et mesurer l’impact potentiel sur l’organisme.",
+    bullets: ["Campagnes continues et engageantes pour les employés."]
+  },
+  {
+    t: "Directive sur l’utilisation du courriel et d’Internet",
+    lead:
+      "Des directives claires et une procédure d’incident.",
+    bullets: ["Procédure pour courriels malicieux, virus, autres menaces."]
+  },
+  {
+    t: "Gestion des accès accordés aux utilisateurs",
+    lead:
+      "Moindre privilège et suivi des activités.",
+    bullets: [
+      "Processus d’ajout/révision/retrait des accès (mouvements de personnel).",
+      "Processus d’accès à privilèges élevés, revu périodiquement.",
+      "Outil de journalisation des accès."
+    ],
+  },
+  {
+    t: "Plan de sensibilisation du personnel",
+    lead:
+      "Former en continu : mobiles, hameçonnage, rançongiciels, ingénierie sociale.",
+    bullets: ["Programme de formation continue en cybersécurité."]
+  },
+];
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ÉÉSAD — 15 Points de Sécurité</title>
+
+    <!-- Inter font for cleaner type -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+      /* Reveal-on-hover motion */
+      .details {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-4px);
+        transition: max-height .4s ease, opacity .3s ease, margin-top .3s ease, transform .3s ease;
+      }
+      .card:hover .details {
+        max-height: 520px;
+        opacity: 1;
+        margin-top: .5rem;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-gradient-to-br from-[#e2e8f0] via-[#cfd9e5] to-[#b8c9dc] text-blue-900
+">
+    <!-- Header with logo -->
+    <header class="bg-white/70 backdrop-blur border-t-4 border-[#20689B]">
+      <div class="mx-auto max-w-6xl px-6 py-5 flex justify-center">
+        <img src={logoUrl} alt="ÉÉSAD" class="h-10 w-auto mx-auto" />
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-10">
+      <!-- Hero -->
+      <h1 class="text-center text-4xl md:text-5xl font-extrabold tracking-tight text-[#20689B]">
+        Faites de la cybersécurité un réflexe quotidien.
+      </h1>
+      <h2 class="mt-3 text-center text-lg md:text-xl font-semibold text-[#20689B]/80">
+        15 Points de Sécurité Informatique
+      </h2>
+      <p class="mt-1 text-center text-sm text-slate-600">Survolez chaque point pour voir le détail</p>
+
+      <!-- Cards -->
+      <div class="mt-10 grid gap-6">
+        {points.map((p, i) => (
+          <section
+            class="card group relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80
+                   backdrop-blur shadow-sm transition
+                   hover:shadow-lg hover:bg-white"
+          >
+            <!-- shimmer on hover -->
+            <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition
+                        bg-gradient-to-r from-[#20689B]/5 via-transparent to-transparent"></div>
+
+            <div class="flex items-start gap-4 p-6">
+              <!-- Number badge with halo -->
+              <div class="relative shrink-0">
+                <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-8 rounded-t-full
+                            bg-[#E7F2FA] shadow-[0_8px_18px_rgba(32,104,155,0.25)]"></div>
+                <div class="relative grid place-items-center w-16 h-16 rounded-full bg-white
+                            ring-4 ring-[#20689B]/50 shadow transition
+                            group-hover:shadow-[0_0_20px_rgba(32,104,155,0.35)]">
+                  <span class="text-3xl font-extrabold text-[#20689B] leading-none">{i + 1}</span>
+                </div>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="text-2xl md:text-[26px] font-extrabold tracking-tight text-[#1A4F79]">
+                  {p.t}
+                </h3>
+                <div class="details">
+                  <p class="mt-3 text-[15px] leading-relaxed">{p.lead}</p>
+                  {p.bullets?.length && (
+                    <ul class="list-disc ml-6 mt-3 space-y-1 text-[15px]">
+                      {p.bullets.map((b) => <li>{b}</li>)}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+    </main>
+
+    <footer class="mt-16 bg-gradient-to-r from-[#20689B] to-[#1A517B] text-white text-center py-6">
+      <p>© {new Date().getFullYear()} ÉÉSAD — Sécurité Informatique</p>
+    </footer>
+  </body>
+</html>

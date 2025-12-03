@@ -1,39 +1,149 @@
 [
   {
-    "id": "org_name",
-    "section": "Organisation",
-    "question": "Nom de l’organisation",
-    "type": "text",
-    "required": true,
-    "placeholder": "EÉSAD Exemple"
-  },
-  {
-    "id": "contact_email",
-    "section": "Organisation",
-    "question": "Courriel de contact",
-    "type": "email",
-    "required": true,
-    "placeholder": "contact@exemple.org"
-  },
-  {
-    "id": "w11_migration_ready",
-    "section": "Parc informatique",
-    "question": "Migration vers Windows 11 amorcée?",
+    "id": "q1",
+    "question": "Avez-vous une politique de sécurité informatique écrite ?",
     "type": "radio",
     "required": true,
-    "options": ["Oui", "Non", "En cours"]
+    "options": ["1", "2", "3", "4", "5"]
   },
   {
-    "id": "os_mix",
-    "section": "Parc informatique",
-    "question": "Systèmes utilisés",
-    "type": "checkbox",
-    "options": ["Windows 10", "Windows 11", "macOS", "Linux"]
+    "id": "q2",
+    "question": "Avez-vous désigné une personne responsable de la cybersécurité ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
   },
   {
-    "id": "notes",
-    "section": "Commentaires",
-    "question": "Commentaires additionnels",
-    "type": "textarea"
+    "id": "q3",
+    "question": "Faites-vous une évaluation des risques au moins une fois par année ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q4",
+    "question": "Avez-vous une politique de gestion des arrivées et départs d’employés ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q5",
+    "question": "Avez-vous une politique encadrant l’utilisation des outils numériques par les employés ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q6",
+    "question": "Utilisez-vous l’authentification multifactorielle (MFA) sur tous les logiciels ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q7",
+    "question": "Les mots de passe sont-ils complexes et changés régulièrement ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q8",
+    "question": "Limitez-vous l’accès aux données sensibles selon le rôle ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q9",
+    "question": "Vos données sont-elles sauvegardées régulièrement ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q10",
+    "question": "Avez-vous testé une restauration dans les 12 derniers mois ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q11",
+    "question": "Les sauvegardes sont-elles stockées dans un lieu sécurisé au Canada ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q12",
+    "question": "Donnez-vous une formation cybersécurité cette année ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q13",
+    "question": "Vos employés savent-ils reconnaître un courriel d’hameçonnage ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q14",
+    "question": "Avez-vous une procédure de réponse aux incidents ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q15",
+    "question": "Utilisez-vous un antivirus à jour sur tous les appareils ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q16",
+    "question": "Avez-vous un pare-feu ou une solution de filtrage réseau ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q17",
+    "question": "Avez-vous une solution de détection d’intrusion/comportements suspects ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q18",
+    "question": "OS et logiciels sont-ils mis à jour régulièrement ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q19",
+    "question": "La licence de votre pare-feu est-elle valide et à jour ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q20",
+    "question": "Disposez-vous d’un réseau Wi-Fi invité ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
+  },
+  {
+    "id": "q21",
+    "question": "Le Wi-Fi invité est-il segmenté du réseau interne ?",
+    "type": "radio",
+    "required": true,
+    "options": ["1", "2", "3", "4", "5"]
   }
 ]

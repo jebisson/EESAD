@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/serverless";
+import node from "@astrojs/node";
 
 export default defineConfig({
-  adapter: vercel(),  // makes /api/submit work on Vercel
-  output: "server",   // enables server routes
+  output: "server",
+  adapter: node({ mode: "standalone" }),
 });

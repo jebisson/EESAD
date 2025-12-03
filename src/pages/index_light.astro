@@ -1,0 +1,196 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Services TI – EÉSAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <!-- Single consistent background colour everywhere -->
+  <body class="min-h-screen bg-[#C5DFF5] text-corporateblue
+
+
+">
+    <div class="min-h-screen flex flex-col">
+
+      <!-- HEADER -->
+      <header class="py-10 bg-[#C5DFF5]">
+        <div class="mx-auto flex flex-col items-center gap-3">
+         <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+          <p class="text-xs tracking-[0.25em] text-corporateblue
+
+ uppercase">
+            Services TI
+          </p>
+        </div>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section class="mx-auto max-w-4xl px-4 pb-10 text-center bg-[#C5DFF5]">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-corporateblue">
+          Sécurité, modernisation et accompagnement TI
+        </h1>
+        <p class="mt-4 text-lg md:text-xl leading-relaxed text-slate 700">
+          Une porte d’entrée unique vers nos services TI
+        </p>
+      </section>
+
+      <!-- MAIN CONTENT WITH WAVE -->
+      <main class="mt-6">
+        <!-- White band with wave -->
+        <section class="relative w-full bg-white overflow-hidden shadow-inner">
+
+          <!-- Wave (same blue as background, dipping into white) -->
+            <svg viewBox="0 0 1440 250" preserveAspectRatio="none"
+              class="pointer-events-none absolute top-0 left-0 w-full h-48 text-[#C5DFF5]">
+              <path fill="currentColor"
+                d="
+                  M0,100
+                  C300,180 600,20 900,100
+                  C1150,160 1320,120 1440,80
+                  L1440,0 L0,0 Z
+                " />
+            </svg>
+
+
+          <!-- CARD GRID -->
+          <div class="relative mx-auto max-w-6xl px-4 pt-2 pb-20">
+            <section class="grid gap-10 md:grid-cols-3 md:grid-rows-2">
+
+              <!-- CARD 1: Sécurité Microsoft 365 -->
+              <a
+                href="/securite365"
+                class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_8px_25px_-5px_rgba(0,122,255,0.2)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-corporateblue">
+                  Sécurité Microsoft 365
+                </h2>
+                <p class="text-sm leading-relaxed text-corporateblue">
+                  Faites de la cybersécurité un réflexe quotidien.
+                  <br />
+                  15 points de sécurité informatique.
+                </p>
+                <span class="mt-4 inline-flex items-center text-sm font-medium text-sky-700 group-hover:text-sky-800">
+                  Voir la page →
+                </span>
+              </a>
+
+              <!-- CARD 2 -->
+              <a
+                href="#"
+                class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.08)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-corporateblue">
+                  Service TI #2
+                </h2>
+                <p class="text-sm leading-relaxed text-corporateblue">
+                  Espace réservé pour un futur service (sauvegarde, réseau,
+                  accompagnement stratégique, etc.).
+                </p>
+                <span class="mt-4 block text-sm text-corporateblue">
+                  Bientôt disponible
+                </span>
+              </a>
+
+              <!-- CARD 3 -->
+              <a
+                href="#"
+                class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.08)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-corporateblue">
+                  Service TI #3
+                </h2>
+                <p class="text-sm leading-relaxed text-corporateblue">
+                  Ajoutez ici un autre service (Intune, gestion des appareils,
+                  gouvernance, etc.).
+                </p>
+                <span class="mt-4 block text-sm text-corporateblue">
+                  Bientôt disponible
+                </span>
+              </a>
+
+              <!-- CARD 4 -->
+              <a
+                href="#"
+                class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.08)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-corporateblue">
+                  Service TI #4
+                </h2>
+                <p class="text-sm leading-relaxed text-corporateblue">
+                  Bloc prêt pour une offre ciblée (soutien, formation, etc.).
+                </p>
+                <span class="mt-4 block text-sm text-corporateblue">
+                  Bientôt disponible
+                </span>
+              </a>
+
+              <!-- CARD 5 -->
+              <a
+                href="#"
+                class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.08)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-corporateblue">
+                  Service TI #5
+                </h2>
+                <p class="text-sm leading-relaxed text-corporateblue">
+                  Une autre case pour un futur contenu ou une page spécifique.
+                </p>
+                <span class="mt-4 block text-sm text-corporateblue">
+                  Bientôt disponible
+                </span>
+              </a>
+
+              <!-- CARD 6: Questionnaire TI (blue CTA) -->
+              <a
+                href="/survey"
+                class="group rounded-2xl border border-sky-600 bg-sky-600 p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-700 hover:bg-sky-700 hover:shadow-[0_8px_25px_-5px_rgba(0,122,255,0.4)]"
+              >
+                <h2 class="text-lg md:text-xl font-semibold mb-1 text-white">
+                  Questionnaire TI
+                </h2>
+                <p class="text-sm leading-relaxed text-blue-50">
+                  Répondez à quelques questions pour dresser un portrait de
+                  votre environnement TI et mieux cibler nos recommandations.
+                </p>
+                <span class="mt-4 block text-sm font-medium text-white">
+                  Remplir le questionnaire →
+                </span>
+              </a>
+            </section>
+          </div>
+        </section>
+      </main>
+<!-- Footer wave (Option A, inverted) -->
+<svg
+  viewBox="0 0 1440 250"
+  preserveAspectRatio="none"
+  class="w-full h-48 text-[#C5DFF5] rotate-180"
+  aria-hidden="true"
+>
+  <path
+    fill="currentColor"
+    d="
+      M0,100
+      C300,180 600,20 900,100
+      C1150,160 1320,120 1440,80
+      L1440,0 L0,0 Z
+    "
+  />
+</svg>
+
+
+      <!-- FOOTER -->
+      <footer class="mt-auto border-t border-slate-300 bg-[#C5DFF5]">
+        <div class="mx-auto max-w-6xl px-4 py-6 text-center text-xs text-corporateblue">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

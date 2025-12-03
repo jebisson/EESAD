@@ -1,0 +1,237 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Services TI – EÉSAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="min-h-screen flex flex-col">
+      {/* HEADER / LOGO */}
+      <header class="py-8">
+        <div class="mx-auto flex flex-col items-center gap-3">
+          <img src={logo.src} alt="EÉSAD" class="h-10 w-auto" />
+          <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+            Services TI
+          </h1>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section class="mx-auto max-w-4xl px-4 pb-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+          Sécurité, modernisation et accompagnement TI
+        </h2>
+        <p class="mt-3 text-sm md:text-base text-slate-300">
+          Une porte d’entrée unique vers nos services TI : vision globale de la
+          sécurité Microsoft 365 et questionnaire pour dresser le portrait de
+          votre environnement.
+        </p>
+      </section>
+
+      {/* BAND WITH WAVE OVERLAPPING CARDS */}
+      <main class="mt-10">
+        <section class="relative w-full bg-slate-900 overflow-hidden">
+          {/* TOP WAVE INSIDE THE BAND (dark area ABOVE the curve) */}
+          <svg
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            class="pointer-events-none absolute top-0 left-0 w-full h-64 text-slate-950"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="
+                M0,160
+                C240,80 480,240 720,160
+                C960,80 1200,240 1440,160
+                L1440,0 L0,0 Z
+              "
+            />
+          </svg>
+
+          {/* CONTENT (CARDS) */}
+          <div class="relative mx-auto max-w-6xl px-4 pt-12 pb-16">
+            <section class="grid gap-8 md:grid-cols-3 md:grid-rows-2">
+              {/* CARD 1: Sécurité Microsoft 365 */}
+              <a
+                href="/securite365"
+                class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/90 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-sky-400/80 hover:shadow-sky-500/30"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">
+                      Sécurité Microsoft 365
+                    </h3>
+                    <p class="text-sm text-slate-200">
+                      Faites de la cybersécurité un réflexe quotidien.
+                      <br />
+                      15 points de sécurité informatique.
+                    </p>
+                  </div>
+
+                  <span class="mt-4 inline-flex items-center text-sm font-medium text-sky-300 group-hover:text-sky-100">
+                    Voir la page
+                    <span
+                      class="ml-1 translate-x-0 transition-transform duration-200 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+
+              {/* CARD 2: placeholder */}
+              <a
+                href="#"
+                class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/80 hover:shadow-slate-500/30"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">Service TI #2</h3>
+                    <p class="text-sm text-slate-200">
+                      Espace réservé pour un futur service (sauvegarde, réseau,
+                      accompagnement stratégique, etc.).
+                    </p>
+                  </div>
+                  <span class="mt-4 inline-flex items-center text-sm text-slate-300 group-hover:text-slate-100">
+                    Bientôt disponible
+                  </span>
+                </div>
+              </a>
+
+              {/* CARD 3: placeholder */}
+              <a
+                href="#"
+                class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/80 hover:shadow-slate-500/30"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">Service TI #3</h3>
+                    <p class="text-sm text-slate-200">
+                      Ajoutez ici un autre service (Intune, gestion des
+                      appareils, gouvernance, etc.).
+                    </p>
+                  </div>
+                  <span class="mt-4 inline-flex items-center text-sm text-slate-300 group-hover:text-slate-100">
+                    Bientôt disponible
+                  </span>
+                </div>
+              </a>
+
+              {/* CARD 4: placeholder */}
+              <a
+                href="#"
+                class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/80 hover:shadow-slate-500/30"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">Service TI #4</h3>
+                    <p class="text-sm text-slate-200">
+                      Bloc prêt pour une offre ciblée (soutien, formation,
+                      etc.).
+                    </p>
+                  </div>
+                  <span class="mt-4 inline-flex items-center text-sm text-slate-300 group-hover:text-slate-100">
+                    Bientôt disponible
+                  </span>
+                </div>
+              </a>
+
+              {/* CARD 5: placeholder */}
+              <a
+                href="#"
+                class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-950/80 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-slate-500/80 hover:shadow-slate-500/30"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-slate-500/0 via-slate-500/0 to-slate-500/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">Service TI #5</h3>
+                    <p class="text-sm text-slate-200">
+                      Une autre case pour un futur contenu ou une page
+                      spécifique.
+                    </p>
+                  </div>
+                  <span class="mt-4 inline-flex items-center text-sm text-slate-300 group-hover:text-slate-100">
+                    Bientôt disponible
+                  </span>
+                </div>
+              </a>
+
+              {/* CARD 6: Questionnaire TI (blue) */}
+              <a
+                href="/survey"
+                class="group relative overflow-hidden rounded-2xl border border-blue-600 bg-blue-600 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:bg-blue-500 hover:shadow-blue-500/40"
+              >
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-blue-400/20 to-blue-700/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative flex h-44 flex-col justify-between">
+                  <div>
+                    <h3 class="mb-1 text-xl font-semibold">
+                      Questionnaire TI
+                    </h3>
+                    <p class="text-sm text-blue-50">
+                      Répondez à quelques questions pour dresser le portrait
+                      de votre environnement informatique et mieux cibler nos
+                      recommandations.
+                    </p>
+                  </div>
+
+                  <span class="mt-4 inline-flex items-center text-sm font-medium text-white">
+                    Remplir le questionnaire
+                    <span
+                      class="ml-1 translate-x-0 transition-transform duration-200 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="mt-auto border-t border-slate-800">
+        <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
