@@ -52,13 +52,21 @@ export const POST: APIRoute = async ({ request }) => {
       tls: { ciphers: "TLSv1.2" },
     });
 
-    // Send mail
-    await transporter.sendMail({
-      from: `"Questionnaire TI" <${user}>`,
-      to: recipient,
-      subject: "Soumission du questionnaire",
-      html,
-    });
+        // Detect if it's the backup activation form
+        const isActivation =
+        Object.keys(body).some((k) => k.startsWith("activation_"));
+
+        const emailSubject = isActivation
+        ? "Demande d’activation — Sauvegarde Microsoft 365"
+        : "Soumission du questionnaire TI";
+
+        await transporter.sendMail({
+        from: `"Services TI" <${process.env.SMTP_USER}>`,
+        to: recipient,
+        subject: emailSubject,
+        html,
+        });
+
 
     console.log("📤 Email sent successfully!");
 

@@ -141,9 +141,10 @@ import logo from "../assets/eesad-logo.png";
             {/* CARDS 2–5 */}
             {[
               {
-                title: "Service TI #2",
-                desc: "Espace réservé pour un futur service.",
-                link: "#"
+                title: "3$/mois",
+                desc: "Sauvegarder les données de Microsoft 365 pour 3$ par utilsisateur par mois. Inclut Outlook, OneDrive, SharePoint et Teams.",
+                link: "/sauvegarde365",
+                descClass: "text-md"
               },
               {
                 title: "Service TI #3",
@@ -180,7 +181,8 @@ import logo from "../assets/eesad-logo.png";
                 <div class="relative flex h-44 flex-col justify-between">
                   <div>
                     <h3 class="mb-2 text-xl font-semibold">{s.title}</h3>
-                    <p class="text-sm text-slate-200">{s.desc}</p>
+                    <p class={`text-slate-200 text-sm ${s.descClass || ""}`}>{s.desc}
+                    </p>
                   </div>
                   <span class="mt-4 inline-flex items-center text-sm text-sky-300 font-medium group-hover:text-sky-100">
                     {s.link !== "#" ? "Voir la page →" : "Bientôt disponible"}

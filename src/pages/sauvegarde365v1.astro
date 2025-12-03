@@ -1,0 +1,229 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sauvegarde Cloud Microsoft 365 – EÉSAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div class="min-h-screen flex flex-col">
+
+      {/* HEADER */}
+      <header class="pt-12 pb-8 text-center relative">
+        <div class="relative mx-auto flex flex-col items-center gap-3 z-10">
+          <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+          <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+            Sauvegarde cloud
+          </h1>
+        </div>
+      </header>
+                  <a
+        href="/"
+        class="fixed right-6 top-5 z-50
+              inline-flex items-center px-4 py-2 rounded-lg
+              bg-slate-800/80 border border-slate-700 
+              text-slate-200 text-sm font-medium
+              hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+              shadow-lg backdrop-blur
+              transition-all"
+      >
+        ← Retour à la page Services TI
+      </a>
+
+      {/* HERO */}
+      <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
+
+        {/* Glow */}
+        <div
+          class="absolute left-1/2 top-10 -translate-x-1/2
+                 w-[70%] md:w-[60%] h-24
+                 bg-blue-400/30 blur-[70px] opacity-80"
+        ></div>
+
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
+          Sauvegarde Cloud Sécurisée pour Microsoft 365
+        </h2>
+
+        <p class="mt-3 text-base md:text-md text-slate-200">
+          Protégez vos données Microsoft 365 contre l’erreur humaine, les attaques
+          et les exigences de conformité. Une solution fiable, rapide et hébergée au Canada.
+        </p>
+
+        <a
+          href="#activer"
+          class="inline-block mt-6 px-6 py-3 rounded-xl font-semibold 
+                 bg-sky-500 text-slate-900 hover:bg-sky-400 transition"
+        >
+          Activer la sauvegarde
+        </a>
+      </section>
+
+      {/* WAVE + CONTENT BAND */}
+      <main class="mt-5">
+        <section class="relative w-full bg-slate-900 overflow-hidden -mt-20">
+
+          {/* Under-wave lighting */}
+          <div
+            class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 
+                   bg-blue-400/10 blur-3xl z-0"
+          ></div>
+
+          {/* WAVE */}
+          <svg
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0"
+          >
+            <path
+              fill="currentColor"
+              d="
+                M0,220
+                C240,140 480,300 720,220
+                C960,140 1200,300 1440,220
+                L1440,0 L0,0 Z
+              "
+            />
+          </svg>
+
+          {/* Gradient overlay */}
+          <div
+            class="absolute inset-0 bg-gradient-to-b 
+                   from-transparent to-slate-950/40 z-0"
+          ></div>
+
+          <h3
+            class="relative z-20 text-center text-slate-400 
+                   text-xs uppercase tracking-[0.25em] mt-28 mb-10"
+          >
+            Pourquoi sauvegarder Microsoft 365?
+          </h3>
+
+          <div class="relative z-20 mx-auto max-w-5xl px-4 pb-20 space-y-16">
+
+            {/* SECTION 1 – Risques */}
+            <section class="space-y-4 text-slate-200 text-lg leading-relaxed">
+              <p>
+                Contrairement à ce que plusieurs croient, Microsoft ne sauvegarde pas
+                vos données Microsoft 365 pour vous. Les données supprimées, altérées
+                ou attaquées ne sont pas garanties d’être récupérables.
+              </p>
+
+              <ul class="list-disc ml-6 space-y-2 text-slate-300 text-base">
+                <li>Suppression accidentelle</li>
+                <li>Ransomware et attaques ciblant Exchange, OneDrive et SharePoint</li>
+                <li>Corruption ou perte de fichiers</li>
+                <li>Limites des versions Microsoft</li>
+                <li>Départ d’employés / rotation du personnel</li>
+              </ul>
+            </section>
+
+            {/* SECTION 2 – Loi 25 */}
+            <section class="rounded-2xl bg-slate-800/60 p-8 border border-slate-700">
+              <h4 class="text-xl font-semibold mb-3 text-sky-300">Conformité Loi 25</h4>
+
+              <p class="leading-relaxed text-slate-300">
+                La Loi 25 exige que les organismes disposent de mesures pour assurer la
+                conservation, la sécurité et l’intégrité des renseignements personnels.
+                Sans sauvegarde indépendante, il est impossible de garantir la
+                restauration des données en cas de cyberincident.
+              </p>
+            </section>
+
+            {/* SECTION 3 – Notre solution */}
+            <section>
+              <h4 class="text-2xl font-semibold text-slate-100 mb-6">
+                Notre solution de sauvegarde
+              </h4>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="rounded-2xl bg-slate-800/60 p-6 border border-slate-700">
+                  <h5 class="font-semibold text-lg mb-2 text-sky-300">Sauvegarde automatique</h5>
+                  <p class="text-slate-300 text-sm">
+                    Sauvegarde multiple fois par jour des courriels, OneDrive,
+                    SharePoint et Teams.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-slate-800/60 p-6 border border-slate-700">
+                  <h5 class="font-semibold text-lg mb-2 text-sky-300">Restauration rapide</h5>
+                  <p class="text-slate-300 text-sm">
+                    Récupération granulaire d’un fichier, courriel ou dossier complet.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl bg-slate-800/60 p-6 border border-slate-700">
+                  <h5 class="font-semibold text-lg mb-2 text-sky-300">Hébergement Canadien</h5>
+                  <p class="text-slate-300 text-sm">
+                    Données sauvegardées dans des centres de données conformes au Canada.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 4 – Datto */}
+            <section>
+              <h4 class="text-2xl font-semibold text-slate-100 mb-4">
+                Pourquoi Datto?
+              </h4>
+
+              <p class="leading-relaxed text-slate-300 mb-4">
+                Datto est une solution de sauvegarde reconnue à travers le monde,
+                spécialisée dans la protection des environnements Microsoft 365.
+                Elle offre une rétention étendue, une sécurité robuste et une restauration
+                granulaire en quelques secondes.
+              </p>
+            </section>
+
+            {/* SECTION 5 – Tarification */}
+            <section id="activer">
+              <div
+                class="rounded-2xl bg-blue-600 p-8 text-white 
+                       shadow-lg border border-blue-500"
+              >
+                <h4 class="text-2xl font-semibold mb-2">Tarification</h4>
+
+                <p class="text-lg mb-4">
+                  <span class="font-bold text-3xl">$3</span> / utilisateur / mois
+                </p>
+
+                <ul class="list-disc ml-6 space-y-2">
+                  <li>Configuration initiale incluse</li>
+                  <li>Engagement de 36 mois</li>
+                  <li>Maintenance mensuelle incluse</li>
+                  <li>Protection complète Microsoft 365</li>
+                </ul>
+
+                <a
+                  href="/survey"
+                  class="inline-block mt-6 px-6 py-3 rounded-xl font-semibold 
+                         bg-white text-blue-700 hover:bg-slate-100 transition"
+                >
+                  Activer la sauvegarde
+                </a>
+              </div>
+            </section>
+
+          </div>
+        </section>
+      </main>
+
+      {/* FOOTER */}
+      <footer class="mt-auto border-t border-slate-800 relative">
+        <div
+          class="absolute inset-x-0 -top-px h-[2px]
+                 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
+        ></div>
+
+        <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>

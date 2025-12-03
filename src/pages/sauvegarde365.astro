@@ -1,0 +1,382 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sauvegarde Cloud Microsoft 365 – EÉSAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+    <div class="min-h-screen flex flex-col">
+
+      <!-- HEADER -->
+      <header class="pt-12 pb-8 text-center relative">
+        <div class="relative mx-auto flex flex-col items-center gap-3 z-10">
+          <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+          <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+            Sauvegarde Cloud
+          </h1>
+        </div>
+      </header>
+      <a
+        href="/"
+        class="fixed right-6 top-5 z-50
+              inline-flex items-center px-4 py-2 rounded-lg
+              bg-slate-800/80 border border-slate-700 
+              text-slate-200 text-sm font-medium
+              hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+              shadow-lg backdrop-blur
+              transition-all"
+      >
+        ← Retour à la page Services TI
+      </a>
+
+      <!-- HERO -->
+      <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
+
+        <!-- Glow -->
+        <div class="absolute left-1/2 top-10 -translate-x-1/2 
+                    w-[70%] md:w-[60%] h-24
+                    bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20
+                    blur-[70px] opacity-80">
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+          Sauvegarde Cloud Sécurisée pour Microsoft 365
+        </h2>
+
+        <p class="mt-4 text-lg text-slate-300">
+          Protégez courriels, OneDrive, SharePoint et Teams grâce à une solution 
+          de sauvegarde indépendante, fiable et hébergée au Canada.
+        </p>
+
+        <a href="#activer"
+           class="inline-block mt-6 px-6 py-3 rounded-xl font-semibold
+                  bg-gradient-to-r from-blue-400 to-indigo-400
+                  text-slate-900 hover:brightness-110 transition">
+          Activer la sauvegarde
+        </a>
+      </section>
+
+      <!-- WAVE + CONTENT BAND -->
+      <main class="mt-5">
+        <section class="relative w-full bg-slate-900 overflow-hidden -mt-20">
+
+          <!-- Under-wave lighting -->
+          <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 
+                      bg-blue-500/10 blur-3xl z-0"></div>
+
+          <!-- WAVE -->
+          <svg viewBox="0 0 1440 320" preserveAspectRatio="none"
+               class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0">
+            <path fill="currentColor"
+                  d="
+                    M0,220
+                    C240,140 480,300 720,220
+                    C960,140 1200,300 1440,220
+                    L1440,0 L0,0 Z
+                  "/>
+          </svg>
+
+          <!-- Gradient overlay -->
+          <div class="absolute inset-0 bg-gradient-to-b 
+                      from-transparent to-slate-950/40 z-0"></div>
+
+          <!-- SECTION TITLE -->
+          <h3 class="relative z-20 text-center text-slate-400 
+                     text-xs uppercase tracking-[0.25em] mt-28 mb-10">
+            Pourquoi sauvegarder Microsoft 365?
+          </h3>
+
+          <div class="relative z-20 mx-auto max-w-6xl px-4 pb-20 space-y-20">
+
+            <!-- WHY 365 GRID -->
+            <section class="grid md:grid-cols-2 gap-12">
+
+              <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
+                <p>
+                  Contrairement à ce que plusieurs croient, Microsoft ne sauvegarde 
+                  pas entièrement vos données. Les suppressions, attaques et pertes 
+                  ne sont pas toujours récupérables.
+                </p>
+
+                <ul class="list-disc ml-6 space-y-2 text-slate-400 text-base">
+                  <li>Suppression accidentelle</li>
+                  <li>Ransomware ciblant Exchange / OneDrive / SharePoint</li>
+                  <li>Corruption ou altération de fichiers</li>
+                  <li>Limites de versions Microsoft</li>
+                  <li>Départ d’employés</li>
+                </ul>
+              </div>
+
+              <!-- Icons column -->
+              <div class="grid grid-cols-1 gap-6">
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl 
+                            bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Trash Icon -->
+                  <svg class="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" 
+                       viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21A48.108 48.108 0 0012 5.25c-2.517 0-4.967.176-7.228.54M4.5 6H19.5"></path>
+                  </svg>
+                  <p class="text-slate-300">Supprimer ≠ Sauvegarder</p>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl 
+                            bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Shield Check -->
+                  <svg class="w-10 h-10 text-indigo-400" fill="none" stroke="currentColor" stroke-width="1.5" 
+                       viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M12 6.75l7.5 3.75-7.5 3.75L4.5 10.5l7.5-3.75z" />
+                  </svg>
+                  <p class="text-slate-300">Protection contre les attaques modernes</p>
+                </div>
+
+                <div class="flex items-start gap-4 p-6 rounded-2xl 
+                            bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Document-text -->
+                  <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" stroke-width="1.5" 
+                       viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M9 12h6M9 9h6m-6 6h6m5 2.25V6.75A2.25 2.25 0 0017.25 4.5H6.75A2.25 2.25 0 004.5 6.75v10.5A2.25 2.25 0 006.75 19.5h10.5A2.25 2.25 0 0019.5 17.25z"/>
+                  </svg>
+                  <p class="text-slate-300">Restauration granulaire rapide</p>
+                </div>
+
+              </div>
+
+            </section>
+
+            <!-- LOI 25 -->
+            <section class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+              <div class="flex items-start gap-4">
+
+                <!-- Shield Icon -->
+                <svg class="w-12 h-12 text-blue-400 flex-shrink-0"
+                     fill="none" stroke="currentColor" stroke-width="1.5" 
+                     viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" 
+                        d="M12 6.75l7.5 3.75-7.5 3.75L4.5 10.5l7.5-3.75z" />
+                </svg>
+
+                <div>
+                  <h4 class="text-xl font-semibold mb-2 text-blue-300">Conformité Loi 25</h4>
+                  <p class="leading-relaxed text-slate-300">
+                    La Loi 25 impose des mesures strictes de sécurité pour 
+                    la protection des renseignements personnels. Une 
+                    sauvegarde indépendante est essentielle pour garantir 
+                    la restauration après un incident.
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- FEATURES GRID -->
+            <section>
+              <h4 class="text-2xl font-semibold text-slate-100 mb-6">
+                Notre solution de sauvegarde
+              </h4>
+
+              <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Cloud Arrow Icon -->
+                  <svg class="w-12 h-12 text-blue-400 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M12 16.5v-9m0 9l3-3m-3 3l-3-3m11.25-3a4.5 4.5 0 00-4.5-4.5h-1.28a6 6 0 10-5.47 9" />
+                  </svg>
+                  <h5 class="font-semibold text-lg mb-2 text-blue-300">Sauvegarde automatique</h5>
+                  <p class="text-slate-300 text-sm">
+                    Sauvegardes multiples par jour pour Exchange, OneDrive, 
+                    SharePoint et Teams.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Arrow Path Icon -->
+                  <svg class="w-12 h-12 text-indigo-400 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M16.5 9.75l-4.5 4.5-4.5-4.5"/>
+                  </svg>
+                  <h5 class="font-semibold text-lg mb-2 text-indigo-300">Restauration rapide</h5>
+                  <p class="text-slate-300 text-sm">
+                    Récupération de fichiers, courriels ou dossiers complets en quelques secondes.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+                  <!-- Server Icon -->
+                  <svg class="w-12 h-12 text-purple-400 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
+                  </svg>
+                  <h5 class="font-semibold text-lg mb-2 text-purple-300">Hébergement Canadien</h5>
+                  <p class="text-slate-300 text-sm">
+                    Données hébergées dans des centres de données conformes au Canada.
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- DATTO SECTION -->
+            <section>
+              <h4 class="text-2xl font-semibold text-slate-100 mb-4">Pourquoi Datto?</h4>
+              <p class="leading-relaxed text-slate-300 mb-4">
+                Datto est une plateforme de sauvegarde reconnue mondialement pour sa 
+                robustesse, sa sécurité et la qualité de ses restaurations. La solution 
+                offre une rétention longue durée, des accès rapides et une interface simple.
+              </p>
+            </section>
+
+            <!-- TARIFICATION -->
+        <section id="activer">
+          <div class="rounded-2xl p-10 bg-gradient-to-br from-blue-600 to-indigo-600 
+                      text-white shadow-xl border border-blue-500 relative">
+
+            <!-- Title -->
+            <h4 class="text-3xl font-semibold mb-3">Tarification</h4>
+
+            <p class="text-xl mb-6">
+              <span class="font-extrabold text-5xl">$3</span> / utilisateur / mois
+            </p>
+
+            <ul class="list-disc ml-6 space-y-2 text-lg mb-8">
+              <li>Configuration initiale incluse</li>
+              <li>Engagement 36 mois</li>
+              <li>Maintenance mensuelle incluse</li>
+              <li>Protection complète Microsoft 365</li>
+            </ul>
+
+            <!-- CTA BUTTON -->
+            <button
+              id="openFormBtn"
+              class="inline-block mt-4 px-8 py-3 rounded-xl font-semibold 
+                    bg-white text-blue-700 hover:bg-slate-100 transition"
+            >
+              Activer la sauvegarde
+            </button>
+
+            <!-- HIDDEN FORM -->
+            <div id="activationFormContainer"
+                class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 mt-6">
+
+              <form id="activationForm"
+                    class="space-y-4 bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20">
+
+                <h5 class="text-xl font-semibold mb-2">Demande d’activation</h5>
+
+                <label class="block text-sm font-medium">
+                  Nom de l’organisation
+                </label>
+                <input type="text" name="activation_org" required
+                      class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                              placeholder-white/40 text-white focus:ring-2 focus:ring-white" />
+
+                <label class="block text-sm font-medium">
+                  Courriel
+                </label>
+                <input type="email" name="activation_email" required
+                      class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                              placeholder-white/40 text-white focus:ring-2 focus:ring-white" />
+
+                <label class="block text-sm font-medium">
+                  Nombre d’utilisateurs
+                </label>
+                <input type="number" name="activation_users" required
+                      class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                              placeholder-white/40 text-white focus:ring-2 focus:ring-white" />
+
+                <button type="submit"
+                        class="mt-4 w-full px-4 py-2 bg-white text-blue-700 rounded-lg font-semibold
+                              hover:bg-slate-100 transition">
+                  Envoyer la demande
+                </button>
+
+                <button type="button" id="closeFormBtn"
+                        class="mt-2 w-full px-4 py-2 bg-white/10 text-white rounded-lg font-medium
+                              border border-white/20 hover:bg-white/20 transition">
+                  Fermer
+                </button>
+
+                <p id="activationStatus" class="text-sm text-white/80 mt-2"></p>
+              </form>
+            </div>
+
+          </div>
+        </section>
+
+      <!-- SCRIPT -->
+      <script>
+        const btn = document.getElementById("openFormBtn");
+        const closeBtn = document.getElementById("closeFormBtn");
+        const panel = document.getElementById("activationFormContainer");
+        const form = document.getElementById("activationForm");
+        const status = document.getElementById("activationStatus");
+
+        // OPEN PANEL
+        btn.addEventListener("click", () => {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.style.opacity = "1";
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        // CLOSE PANEL
+        closeBtn.addEventListener("click", () => {
+          panel.style.maxHeight = "0";
+          panel.style.opacity = "0";
+        });
+
+        // FORM SUBMISSION — SAME AS SURVEY
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const fd = new FormData(form);
+          const data = {};
+
+          for (const [k, v] of fd.entries()) {
+            data[k] = v; // simple key-value
+          }
+
+          status.textContent = "Envoi…";
+
+          try {
+            const res = await fetch("/api/submit", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+              status.textContent = "Demande envoyée!";
+              form.reset();
+            } else {
+              status.textContent = "Erreur d’envoi.";
+            }
+          } catch (err) {
+            status.textContent = "Erreur réseau.";
+          }
+        });
+      </script>
+
+
+      <!-- FOOTER -->
+      <footer class="mt-auto border-t border-slate-800 relative">
+        <div class="absolute inset-x-0 -top-px h-[2px]
+                    bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"></div>
+
+        <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+
+    </div>
+  </body>
+</html>
