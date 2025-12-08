@@ -11,7 +11,9 @@
   "dependencies": {
     "@astrojs/node": "^9.5.1",
     "@astrojs/vercel": "^9.0.2",
+    "@iconify-json/heroicons": "^1.2.3",
     "astro": "^5.14.1",
+    "astro-icon": "^1.1.5",
     "dotenv": "^17.2.3",
     "nodemailer": "^7.0.10"
   },
