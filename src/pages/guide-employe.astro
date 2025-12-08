@@ -1,0 +1,200 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Guide Pratique en Cybersécurité – Employés</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="min-h-screen flex flex-col">
+
+      {/* HEADER */}
+      <header class="pt-12 pb-8 text-center relative">
+        <div class="relative mx-auto flex flex-col items-center gap-3 z-10">
+          <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+          <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+            Guide pratique — Cybersécurité
+          </h1>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
+        <div
+          class="absolute left-1/2 top-10 -translate-x-1/2
+                 w-[70%] md:w-[60%] h-24
+                 bg-blue-400/30 blur-[70px] opacity-80"
+        ></div>
+
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
+          Bonnes pratiques de sécurité pour tous les employés
+        </h2>
+
+        <p class="mt-3 text-base md:text-md text-slate-200">
+          La cybersécurité est l’affaire de tous. Voici les règles essentielles à suivre au quotidien
+          pour protéger l’organisation et les données des usagers.
+        </p>
+      </section>
+
+      {/* WAVE BAND */}
+      <main class="mt-5">
+        <section class="relative w-full bg-slate-900 overflow-hidden -mt-20">
+
+          {/* Under-wave glow */}
+          <div
+            class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40
+                   bg-blue-400/10 blur-3xl z-0"
+          ></div>
+
+          {/* WAVE */}
+          <svg
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0"
+          >
+            <path
+              fill="currentColor"
+              d="M0,220 C240,140 480,300 720,220 C960,140 1200,300 1440,220 L1440,0 L0,0 Z"
+            />
+          </svg>
+
+          {/* Light gradient */}
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/40 z-0"></div>
+
+          {/* SECTION CONTENT */}
+          <div class="relative z-20 mx-auto max-w-4xl px-6 py-20 space-y-20">
+
+            <!-- SECTION 1 – Comptes et mots de passe -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M16.5 10.5V6a4.5 4.5 0 00-9 0v4.5M6 10.5h12M9.75 14.25h.008v.008h-.008v-.008zM14.25 
+                    14.25h.008v.008h-.008v-.008zM12 17.25h.008v.008H12v-.008z" />
+                </svg>
+                Sécuriser votre compte Microsoft 365
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Ne jamais approuver une demande MFA que vous n’avez pas initiée.</li>
+                <li>• Utiliser des mots de passe longs (12+ caractères).</li>
+                <li>• Ne jamais réutiliser un mot de passe personnel au travail.</li>
+                <li>• Activer et utiliser Microsoft Authenticator.</li>
+              </ul>
+            </section>
+
+            <!-- SECTION 2 – Courriels et hameçonnage -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M21.75 12l-9-9-9 9m1.5 0v7.5A2.25 2.25 
+                    0 006 21.75h12a2.25 2.25 0 002.25-2.25V12" />
+                </svg>
+                Reconnaître et éviter l’hameçonnage
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Se méfier des demandes urgentes ou menaçantes.</li>
+                <li>• Vérifier l’adresse de l’expéditeur.</li>
+                <li>• Éviter de cliquer sur des liens inattendus.</li>
+                <li>• Ne pas ouvrir les pièces jointes suspectes.</li>
+                <li>• Contacter l’équipe TI en cas de doute.</li>
+              </ul>
+            </section>
+
+            <!-- SECTION 3 – Navigation sécurisée -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M3 12a9 9 0 0118 0c0 
+                      4.97-4.029 9-9 9s-9-4.03-9-9z" />
+                </svg>
+                Navigation Internet et sécurité
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Utiliser uniquement des sites fiables (HTTPS).</li>
+                <li>• Éviter le Wi-Fi public ou utiliser le VPN.</li>
+                <li>• Ne jamais télécharger de logiciels non approuvés.</li>
+                <li>• Vérifier les URL avant de cliquer.</li>
+              </ul>
+            </section>
+
+            <!-- SECTION 4 – Fichiers et données -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M4.5 4.5h15v15h-15z" />
+                </svg>
+                Gestion des fichiers et données sensibles
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Utiliser OneDrive et SharePoint pour le stockage.</li>
+                <li>• Ne pas enregistrer de fichiers sensibles sur le bureau.</li>
+                <li>• Partager via des liens sécurisés plutôt que des pièces jointes.</li>
+                <li>• Respecter les politiques de conservation et d’archivage.</li>
+              </ul>
+            </section>
+
+            <!-- SECTION 5 – Appareils -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 12h6m-9 6h12M9 6h6m-6 0v12m6-12v12" />
+                </svg>
+                Sécurité des appareils
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Verrouiller son poste (Windows + L).</li>
+                <li>• Laisser les mises à jour se faire automatiquement.</li>
+                <li>• Utiliser la biométrie et un code fort sur mobile.</li>
+                <li>• Ne jamais connecter l’appareil à des sources inconnues.</li>
+              </ul>
+            </section>
+
+            <!-- SECTION 6 – Incidents -->
+            <section class="space-y-6">
+              <h3 class="text-2xl font-semibold flex items-center gap-2">
+                <svg class="w-8 h-8 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 9v3.75m0 3.75h.008v.008H12v-.008z
+                       M10.5 4.5h3l7.5 13.5H3z" />
+                </svg>
+                En cas de doute ou d’incident
+              </h3>
+
+              <ul class="space-y-3 text-slate-300">
+                <li>• Débrancher Internet si nécessaire.</li>
+                <li>• Ne pas continuer à travailler.</li>
+                <li>• Aviser immédiatement l’équipe TI.</li>
+                <li>• Noter ce que vous avez observé.</li>
+              </ul>
+            </section>
+
+          </div>
+        </section>
+      </main>
+
+      {/* FOOTER */}
+      <footer class="mt-auto border-t border-slate-800 relative">
+        <div class="absolute inset-x-0 -top-px h-[2px]
+                     bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"></div>
+
+        <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
