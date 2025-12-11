@@ -1,0 +1,299 @@
+---
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import survey from "../data/survey.json";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Questionnaire TI – EÉSAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+
+    <div class="min-h-screen flex flex-col">
+
+      <!-- HEADER -->
+      <header class="pt-12 pb-8 text-center relative">
+        <div class="relative mx-auto flex flex-col items-center gap-3 z-10">
+          <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+          <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+            Questionnaire TI
+          </h1>
+        </div>
+      </header>
+                  <a
+        href="/"
+        class="fixed right-6 top-5 z-50
+              inline-flex items-center px-4 py-2 rounded-lg
+              bg-slate-800/80 border border-slate-700 
+              text-slate-200 text-sm font-medium
+              hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+              shadow-lg backdrop-blur
+              transition-all"
+      >
+        ← Retour à la page Services TI
+      </a>
+
+      <!-- HERO -->
+      <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
+
+        <!-- Glow -->
+        <div class="absolute left-1/2 top-10 -translate-x-1/2 w-[70%] md:w-[60%] h-24 bg-blue-400/30 blur-[70px] opacity-80"></div>
+
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100">
+          Portrait de votre environnement informatique
+        </h2>
+
+        <p class="mt-3 text-base md:text-md text-slate-200">
+          Remplissez ce questionnaire. Les réponses seront envoyées à l’équipe TI.
+        </p>
+
+      </section>
+
+      <!-- MAIN FORM SECTION -->
+      <main class="mt-5">
+        <section class="relative w-full bg-slate-900 overflow-hidden -mt-20">
+
+          <!-- Lighting under the wave -->
+          <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 bg-blue-400/10 blur-3xl z-0"></div>
+
+          <!-- WAVE -->
+          <svg viewBox="0 0 1440 320" class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0" preserveAspectRatio="none">
+            <path
+              fill="currentColor"
+              d="
+                M0,220
+                C240,140 480,300 720,220
+                C960,140 1200,300 1440,220
+                L1440,0 L0,0 Z
+              "
+            />
+          </svg>
+
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/40 z-0"></div>
+
+          <!-- FORM TITLE -->
+          <h3 class="relative z-20 text-center text-slate-400 text-xs uppercase tracking-[0.25em] mt-28 mb-8">
+            Formulaire
+          </h3>
+
+          <!-- FORM BODY -->
+          <div class="relative z-20 mx-auto max-w-3xl px-4 pb-20">
+
+            <form id="surveyForm" class="space-y-8 rounded-2xl p-8 bg-slate-800/80 border border-slate-700 shadow-xl backdrop-blur-sm">
+
+              <!-- CLIENT INFO -->
+              <section class="space-y-3 p-4 rounded-xl bg-slate-900/60 border border-slate-700">
+                <h2 class="text-xs uppercase tracking-[0.2em] text-slate-400">Informations du membre</h2>
+
+                <label class="block text-base font-semibold">Nom <span class="text-rose-400">*</span></label>
+                <input name="client_nom" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 focus:ring-2 focus:ring-sky-400"/>
+
+                <label class="block text-base font-semibold">Courriel <span class="text-rose-400">*</span></label>
+                <input type="email" name="client_email" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 focus:ring-2 focus:ring-sky-400"/>
+
+                <label class="block text-base font-semibold">Organisation <span class="text-rose-400">*</span></label>
+                <input name="client_org" required class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 focus:ring-2 focus:ring-sky-400"/>
+
+                <label class="block text-base font-semibold">Téléphone (optionnel)</label>
+                <input name="client_phone" class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 focus:ring-2 focus:ring-sky-400"/>
+              </section>
+
+              <!-- DYNAMIC QUESTIONS -->
+              {survey.map((q) => (
+                <section class="space-y-4" data-id={q.id}>
+                  <label class="block text-base font-semibold">
+                    {q.question} {q.required && <span class="text-rose-400">*</span>}
+                  </label>
+
+                  <!-- SLIDER BLOCK -->
+                  <div class="w-full relative select-none">
+
+                    <!-- SLIDER INPUT -->
+                    <input
+                      type="range"
+                      name={q.id}
+                      min="1"
+                      max="4"
+                      step="1"
+                      value="2"
+                      required={q.required}
+                      class="w-full appearance-none bg-transparent cursor-pointer"
+                      onInput={`updateSlider('${q.id}', this.value)`}
+                    />
+
+                    <!-- CUSTOM TRACK -->
+                    <div class="relative -mt-2">
+                      <div class="h-2 bg-slate-700 rounded-full"></div>
+
+                      <!-- TICKS -->
+                      <div class="absolute top-1/2 left-0 w-full flex justify-between -translate-y-1/2">
+                        <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                      </div>
+                    </div>
+
+                    <!-- LABELS -->
+                    <div class="flex justify-between mt-2 text-xs text-slate-400">
+                      <span>Oui</span>
+                      <span>Partiellement</span>
+                      <span>Je ne sais pas</span>
+                      <span>Non</span>
+                    </div>
+
+                  </div>
+                </section>
+              ))}
+
+              <!-- SUBMIT -->
+              <div class="flex items-center gap-3 pt-4">
+                <button type="submit" class="rounded-xl bg-sky-400/90 text-slate-900 px-4 py-2 font-semibold hover:bg-sky-300 transition">
+                  Envoyer
+                </button>
+                <p id="status" class="text-sm text-slate-400"></p>
+              </div>
+
+            </form>
+            <!-- RESULTS BOX -->
+            <div id="resultsBox"
+                class="hidden mt-6 p-6 rounded-2xl bg-slate-800/60 border border-slate-600 shadow-xl">
+              <h3 class="text-lg font-semibold text-slate-100 mb-2">Résultats</h3>
+              <p class="text-slate-300 text-sm">
+                <b>Score total :</b> <span id="score_total"></span>
+              </p>
+              <p class="text-slate-300 text-sm">
+                <b>Maturité :</b> <span id="score_percent"></span>
+              </p>
+              <p class="mt-2 text-slate-200" id="score_message"></p>
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="mt-auto border-t border-slate-800 relative">
+        <div class="absolute inset-x-0 -top-px h-[2px] bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"></div>
+        <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} — Services TI · EÉSAD
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- SCRIPT -->
+      <script>
+        const mapText = {
+          1: "Oui",
+          2: "Partiellement",
+          3: "Je ne sais pas",
+          4: "Non",
+        };
+
+        const mapScore = {
+          1: 5,
+          2: 3,
+          3: 1,
+          4: 2,
+        };
+
+        function updateSlider(id, value) {
+          document.getElementById(id + "_label").textContent = mapText[value];
+        }
+
+        const form = document.getElementById("surveyForm");
+        const status = document.getElementById("status");
+
+        const box = document.getElementById("resultsBox");
+        const scoreTotal = document.getElementById("score_total");
+        const scorePercent = document.getElementById("score_percent");
+        const scoreMsg = document.getElementById("score_message");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          status.textContent = "Envoi…";
+
+          const fd = new FormData(form);
+          const data = {};
+          let totalScore = 0;
+          let maxScore = 0;
+
+          for (const [k, v] of fd.entries()) {
+            if (k.startsWith("client_")) {
+              data[k] = v;
+              continue;
+            }
+
+            const num = Number(v);
+            const score = mapScore[num] ?? 0;
+            totalScore += score;
+            maxScore += 5;
+            data[k] = mapText[num] + " (" + score + ")";
+          }
+
+          // Compute maturity %
+          const percent = Math.round((totalScore / maxScore) * 100);
+
+          // Select maturity message
+          let msg = "";
+          if (percent >= 85) msg = "Excellent — votre organisation démontre une très bonne posture de cybersécurité.";
+          else if (percent >= 70) msg = "Bon — quelques améliorations sont recommandées.";
+          else if (percent >= 50) msg = "Moyen — plusieurs contrôles doivent être renforcés.";
+          else msg = "Faible — un plan d’action TI prioritaire est recommandé.";
+
+          // Display result box
+          scoreTotal.textContent = `${totalScore} / ${maxScore}`;
+          scorePercent.textContent = `${percent}%`;
+          scoreMsg.textContent = msg;
+          box.classList.remove("hidden");
+
+          // Send to API
+          data["score_total"] = `${totalScore} / ${maxScore}`;
+          data["score_percent"] = percent + "%";
+          data["score_message"] = msg;
+
+          try {
+            const res = await fetch("/api/submit", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            status.textContent = res.ok
+              ? "Merci! Vos réponses ont été envoyées."
+              : "Erreur d’envoi.";
+          } catch {
+            status.textContent = "Erreur réseau.";
+          }
+        });
+      </script>
+
+
+    <!-- CUSTOM THUMB -->
+    <style>
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        background: rgb(56 189 248);
+        border-radius: 9999px;
+        cursor: pointer;
+        margin-top: -8px;
+      }
+      input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        background: rgb(56 189 248);
+        border-radius: 9999px;
+        cursor: pointer;
+      }
+    </style>
+
+  </body>
+</html>
