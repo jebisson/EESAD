@@ -1,7 +1,18 @@
 ---
 import "../styles/global.css";
+import { theme } from "../config/theme.js";
 
 const { title = "Services TI – EÉSAD" } = Astro.props;
+
+// Read colors from theme with hard fallbacks
+const bg = theme?.colors?.background ?? "#020617"; // slate-950
+const text = theme?.colors?.text ?? "#e5e7eb";      // slate-200
+const accent = theme?.colors?.accent ?? "#38bdf8";  // sky-400
+const border = theme?.colors?.border ?? "#1f2937";  // slate-800
+
+// Band + wave colors
+const bandBg = theme?.colors?.bandBackground ?? "#020617";
+const waveFill = theme?.colors?.waveFill ?? "#020617";
 ---
 
 <html lang="fr">
@@ -14,37 +25,55 @@ const { title = "Services TI – EÉSAD" } = Astro.props;
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN_HERE"}'>
+      data-cf-beacon='{"token": "6f2c4fbf21544f388aeddb909740d9de"}'>
     </script>
-    <!-- End Cloudflare Web Analytics -->
+
+    <style>
+      :root {{
+        --band-bg: {bandBg};
+        --wave-fill: {waveFill};
+      }}
+    </style>
   </head>
 
-  <body class="min-h-screen bg-slate-950 text-slate-100">
+  <!-- Inline styles here absolutely win over everything -->
+  <body
+    class="min-h-screen"
+    style={`background-color: ${bg}; color: ${text};`}
+  >
     <div class="min-h-screen flex flex-col">
 
-      <!-- HEADER (logo + small title) -->
+      <!-- HEADER -->
       <header class="pt-12 pb-8 text-center relative">
         <div class="relative mx-auto flex flex-col items-center gap-3 z-10">
           <slot name="header" />
         </div>
       </header>
 
-      <!-- HERO (big title + intro) -->
+      <!-- HERO -->
       <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
         <slot name="hero" />
       </section>
 
-      <!-- PAGE CONTENT (each page keeps its own wave / main / sections) -->
+      <!-- PAGE CONTENT -->
       <div class="flex-1">
         <slot />
       </div>
 
-      <!-- FOOTER (same on all pages) -->
-      <footer class="mt-auto border-t border-slate-800 relative">
+      <!-- FOOTER -->
+      <footer
+        class="mt-auto border-t relative"
+        style={`border-color: ${border};`}
+      >
         <div
-          class="absolute inset-x-0 -top-px h-[2px]
-                 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent">
-        </div>
+          class="absolute inset-x-0 -top-px h-[2px]"
+          style={`background: linear-gradient(
+            to right,
+            transparent,
+            ${accent},
+            transparent
+          );`}
+        ></div>
 
         <div class="mx-auto max-w-6xl px-4 py-6 text-xs text-slate-500">
           © {new Date().getFullYear()} — Services TI · EÉSAD

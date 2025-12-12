@@ -1,6 +1,9 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
 ---
 
 <SiteLayout title="Services TI – EÉSAD">
@@ -13,7 +16,7 @@ import logo from "../assets/eesad-logo.png";
     </h1>
   </div>
 
-  <!-- HERO SLOT (keeps your glow, title and intro) -->
+  <!-- HERO SLOT -->
   <div slot="hero" class="relative">
     {/* HERO GLOW */}
     <div
@@ -33,22 +36,27 @@ import logo from "../assets/eesad-logo.png";
     </p>
   </div>
 
-  {/* BAND WITH WAVE + CARDS — UNCHANGED FROM ORIGINAL */}
+  {/* BAND WITH WAVE + CARDS */}
   <main class="mt-5">
-    <section class="relative w-full bg-slate-900 overflow-hidden -mt-20">
+    <section
+      class="relative w-full overflow-hidden -mt-20"
+      style={`background-color: ${bandBackground};`}
+    >
 
-      {/* Under-wave lighting */}
       <div
-        class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 
-               bg-blue-400/10 blur-3xl z-0">
-      </div>
+        class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0"
+        style={`background-color: ${glowColor};`}
+      ></div>
+
 
       {/* WAVE */}
       <svg
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"
-        class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0"
-        aria-hidden="true">
+        class="pointer-events-none absolute top-0 left-0 w-full h-96 z-0"
+        aria-hidden="true"
+        style={`color: ${waveFill};`}
+      >
         <path
           fill="currentColor"
           d="
@@ -56,7 +64,8 @@ import logo from "../assets/eesad-logo.png";
             C240,140 480,300 720,220
             C960,140 1200,300 1440,220
             L1440,0 L0,0 Z
-          " />
+          "
+        />
       </svg>
 
       {/* Light gradient over the band */}
@@ -80,6 +89,7 @@ import logo from "../assets/eesad-logo.png";
 
       {/* CARDS GRID */}
       <div class="relative z-20 mx-auto max-w-6xl px-4 pb-20">
+
         <section class="grid gap-8 md:grid-cols-3 md:grid-rows-2">
 
           {/* CARD 1 */}
@@ -90,19 +100,27 @@ import logo from "../assets/eesad-logo.png";
                    bg-gradient-to-b from-slate-800 to-slate-600
                    p-6 shadow-md transition-all duration-300
                    hover:-translate-y-2 hover:scale-[1.02] hover:rotate-[0.2deg]
-                   hover:border-sky-400/80 hover:shadow-sky-500/30">
+                   hover:border-sky-400/80 hover:shadow-sky-500/30"
+          >
             <div class="relative flex h-44 flex-col justify-between">
               <div>
                 <h3 class="mb-2 text-xl font-semibold flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-10 h-10 text-sky-300 opacity-80 group-hover:opacity-100 transition"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
                       d="M9 12.75L11.25 15 15 9.75m-3-6.042a48.42 48.42 0 00-6 2.558A2.25 
                          2.25 0 005.25 8.91v4.819a6.75 6.75 0 003.022 5.625l3.095 
                          2.06a.75.75 0 00.816 0l3.095-2.06a6.75 6.75 0 003.022-5.625V8.91a2.25 
-                         2.25 0 00-1.25-2.132 48.42 48.42 0 00-6-2.558z" />
+                         2.25 0 00-1.25-2.132 48.42 48.42 0 00-6-2.558z"
+                    />
                   </svg>
                   Sécurité Microsoft 365
                 </h3>
@@ -112,14 +130,16 @@ import logo from "../assets/eesad-logo.png";
                 </p>
               </div>
 
-              <span class="mt-4 inline-flex items-center text-sm font-medium 
-                           text-sky-300 group-hover:text-sky-100">
+              <span
+                class="mt-4 inline-flex items-center text-sm font-medium 
+                       text-sky-300 group-hover:text-sky-100"
+              >
                 Voir la page →
               </span>
             </div>
           </a>
 
-          {/* CARDS 2–5 (unchanged) */}
+          {/* CARDS 2–5 GENERATED */}
           {[
             {
               title: "Sauvegarde Microsoft 365",
@@ -131,7 +151,7 @@ import logo from "../assets/eesad-logo.png";
                       00-8.456 1.09A3.75 3.75 0 006 
                       13.5h12a3.75 3.75 0 00.206-7.464A4.501 4.501 0 
                       0012.75 6.75z" />
-              `
+              `,
             },
             {
               title: "Service TI #3",
@@ -140,7 +160,7 @@ import logo from "../assets/eesad-logo.png";
               icon: `
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                   d="M3 3l3.5 3.5M21 21l-6-6..." />
-              `
+              `,
             },
             {
               title: "Guide pratique employé",
@@ -149,7 +169,7 @@ import logo from "../assets/eesad-logo.png";
               icon: `
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                   d="M3.75 4.5L12 8.25l8.25-3.75v12.75L12 21.75l-8.25-3.75V4.5z" />
-              `
+              `,
             },
             {
               title: "Service TI #5",
@@ -158,8 +178,8 @@ import logo from "../assets/eesad-logo.png";
               icon: `
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                   d="M9 12h6M9 9h6M9 15h3..." />
-              `
-            }
+              `,
+            },
           ].map((s) => (
             <a
               href={s.link}
@@ -168,13 +188,14 @@ import logo from "../assets/eesad-logo.png";
                      bg-gradient-to-b from-slate-900 to-slate-800
                      p-6 shadow-md transition-all duration-300
                      hover:-translate-y-2 hover:scale-[1.02] hover:rotate-[0.2deg]
-                     hover:border-sky-400/80 hover:shadow-sky-500/30">
+                     hover:border-sky-400/80 hover:shadow-sky-500/30"
+            >
               <div
                 class="pointer-events-none absolute inset-0 
                        bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/20
                        opacity-0 transition-opacity duration-300 
-                       group-hover:opacity-100">
-              </div>
+                       group-hover:opacity-100"
+              ></div>
 
               <div class="relative flex h-44 flex-col justify-between">
                 <div>
@@ -182,8 +203,11 @@ import logo from "../assets/eesad-logo.png";
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-10 h-10 text-sky-300 opacity-80 group-hover:opacity-100 transition"
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                      set:html={s.icon}>
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      set:html={s.icon}
+                    >
                     </svg>
                     {s.title}
                   </h3>
@@ -191,7 +215,9 @@ import logo from "../assets/eesad-logo.png";
                     {s.desc}
                   </p>
                 </div>
-                <span class="mt-4 inline-flex items-center text-sm text-sky-300 font-medium group-hover:text-sky-100">
+                <span
+                  class="mt-4 inline-flex items-center text-sm text-sky-300 font-medium group-hover:text-sky-100"
+                >
                   {s.link !== "#" ? "Voir la page →" : "Bientôt disponible"}
                 </span>
               </div>
@@ -206,13 +232,14 @@ import logo from "../assets/eesad-logo.png";
                    p-6 shadow-md transition-all duration-300
                    hover:-translate-y-2 hover:scale-[1.02] hover:rotate-[0.2deg]
                    hover:border-blue-400 hover:bg-blue-500
-                   hover:shadow-blue-500/40">
+                   hover:shadow-blue-500/40"
+          >
             <div
               class="pointer-events-none absolute inset-0 
                      bg-gradient-to-br from-white/10 via-blue-400/20 to-blue-700/40 
                      opacity-0 transition-opacity duration-300 
-                     group-hover:opacity-100">
-            </div>
+                     group-hover:opacity-100"
+            ></div>
 
             <div class="relative flex h-44 flex-col justify-between">
               <div>
@@ -234,6 +261,4 @@ import logo from "../assets/eesad-logo.png";
       </div>
     </section>
   </main>
-
 </SiteLayout>
-

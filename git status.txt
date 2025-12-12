@@ -1,0 +1,4 @@
+git status
+git add .
+git commit -m "Refactor pages to use SiteLayout and fix styling"
+git push

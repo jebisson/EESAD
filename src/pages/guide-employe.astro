@@ -1,11 +1,15 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
 ---
 
 <SiteLayout title="Guide pratique – Employé | Cybersécurité">
+
   <!-- HEADER SLOT -->
-  <div slot="header" class="flex flex-col items-center gap-3">
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
     <img src={logo.src} alt="EÉSAD" class="h-20 w-auto drop-shadow-xl" />
     <p class="text-sm tracking-[0.25em] text-slate-400 uppercase">
       Guide pratique · Employé
@@ -13,7 +17,7 @@ import logo from "../assets/eesad-logo.png";
   </div>
 
   <!-- HERO SLOT -->
-  <div slot="hero" class="relative">
+  <div slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10">
     <!-- Glow -->
     <div
       class="absolute left-1/2 top-10 -translate-x-1/2 
@@ -46,20 +50,24 @@ import logo from "../assets/eesad-logo.png";
     ← Retour à la page Services TI
   </a>
 
-  <!-- WAVE + CONTENT BAND (unchanged) -->
-  <main class="relative w-full bg-slate-900 overflow-hidden -mt-20 pt-32 pb-20">
-
+  <!-- WAVE + CONTENT BAND -->
+  <main
+    class="relative w-full overflow-hidden -mt-20 pt-32 pb-20"
+    style={`background-color: ${bandBackground};`}
+  >
     <!-- Under-wave lighting -->
-    <div
-      class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 
-             bg-blue-500/10 blur-3xl z-0">
-    </div>
+      <div
+        class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0"
+        style={`background-color: ${glowColor};`}
+      ></div>
+
 
     <!-- WAVE -->
     <svg
       viewBox="0 0 1440 320"
       preserveAspectRatio="none"
-      class="pointer-events-none absolute top-0 left-0 w-full h-96 text-slate-950 z-0"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96 z-0"
+      style={`color: ${waveFill};`}
     >
       <path
         fill="currentColor"
@@ -90,16 +98,21 @@ import logo from "../assets/eesad-logo.png";
             class="h-7 w-7 stroke-blue-300"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.7">
+            stroke-width="1.7"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M9 12.75L11.25 15 15 9.75m-9-3.27l6-2.48 6 2.48a2.25 2.25 0 011.35 2.10v4.64a8.96 8.96 0 01-4.89 7.97l-2.46 1.23-2.46-1.23A8.96 8.96 0 013.9 13.22V8.58a2.25 2.25 0 011.35-2.10z" />
+              d="M9 12.75L11.25 15 15 9.75m-9-3.27l6-2.48 6 2.48a2.25 2.25 0 011.35 2.10v4.64a8.96 8.96 0 01-4.89 7.97l-2.46 1.23-2.46-1.23A8.96 8.96 0 013.9 13.22V8.58a2.25 2.25 0 011.35-2.10z"
+            />
           </svg>
         </div>
 
         <div class="flex-1 space-y-4">
-          <h2 class="section-title">Protégez votre compte et vos mots de passe</h2>
+          <h2 class="section-title">
+            Protégez votre compte et vos mots de passe
+          </h2>
+
           <p class="section-text">
             Votre compte Microsoft 365 donne accès à vos courriels, documents et outils de travail.
             Il doit être protégé comme un coffre-fort.
@@ -129,11 +142,13 @@ import logo from "../assets/eesad-logo.png";
               class="h-5 w-5 stroke-red-300 flex-shrink-0"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.8">
+              stroke-width="1.8"
+            >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M12 9v3.75m0 3.75h.007m9.243-3.75a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0z" />
+                d="M12 9v3.75m0 3.75h.007m9.243-3.75a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0z"
+              />
             </svg>
 
             <p>
@@ -153,20 +168,26 @@ import logo from "../assets/eesad-logo.png";
             class="h-7 w-7 stroke-blue-300"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.7">
+            stroke-width="1.7"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M3 7l8.48 5.26a2.25 2.25 0 002.5 0L22 7" />
+              d="M3 7l8.48 5.26a2.25 2.25 0 002.5 0L22 7"
+            />
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9A2.25 2.25 0 014.5 5.25h15A2.25 2.25 0 0121.75 7.5z" />
+              d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9A2.25 2.25 0 014.5 5.25h15A2.25 2.25 0 012.25 7.5z"
+            />
           </svg>
         </div>
 
         <div class="flex-1 space-y-4">
-          <h2 class="section-title">Courriels, pièces jointes et hameçonnage</h2>
+          <h2 class="section-title">
+            Courriels, pièces jointes et hameçonnage
+          </h2>
+
           <p class="section-text">
             Le courriel est le principal vecteur d’attaque. Un seul clic peut compromettre un compte.
           </p>
@@ -174,17 +195,23 @@ import logo from "../assets/eesad-logo.png";
           <div class="section-grid-3">
             <div class="tip-box">
               <p class="tip-title">1. Méfiez-vous des demandes urgentes</p>
-              <p class="tip-text">Les fraudeurs utilisent la pression et l’urgence.</p>
+              <p class="tip-text">
+                Les fraudeurs utilisent la pression et l’urgence.
+              </p>
             </div>
 
             <div class="tip-box">
               <p class="tip-title">2. Vérifiez l’expéditeur</p>
-              <p class="tip-text">Un nom peut être imité — pas un domaine courriel.</p>
+              <p class="tip-text">
+                Un nom peut être imité — pas un domaine courriel.
+              </p>
             </div>
 
             <div class="tip-box">
               <p class="tip-title">3. Attention aux pièces jointes</p>
-              <p class="tip-text">Passez la souris sur les liens avant de cliquer.</p>
+              <p class="tip-text">
+                Passez la souris sur les liens avant de cliquer.
+              </p>
             </div>
           </div>
 
@@ -195,11 +222,13 @@ import logo from "../assets/eesad-logo.png";
               class="h-5 w-5 stroke-emerald-300 flex-shrink-0"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.8">
+              stroke-width="1.8"
+            >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M9 12.75L11.25 15 15 9.75m6 2.25a9.75 9.75 0 11-19.5 0A9.75 9.75 0 0121 12z" />
+                d="M9 12.75L11.25 15 15 9.75m6 2.25a9.75 9.75 0 11-19.5 0A9.75 9.75 0 0121 12z"
+              />
             </svg>
 
             <p>
@@ -219,20 +248,26 @@ import logo from "../assets/eesad-logo.png";
             class="h-7 w-7 stroke-blue-300"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.7">
+            stroke-width="1.7"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M3.75 6A2.25 2.25 0 016 3.75h12A2.25 2.25 0 0119.5 6v8.25H3.75V6z" />
+              d="M3.75 6A2.25 2.25 0 016 3.75h12A2.25 2.25 0 0119.5 6v8.25H3.75V6z"
+            />
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M2.25 18h19.5A1.5 1.5 0 0123 19.5v.75H1.5v-.75A1.5 1.5 0 012.25 18z" />
+              d="M2.25 18h19.5A1.5 1.5 0 0123 19.5v.75H1.5v-.75A1.5 1.5 0 012.25 18z"
+            />
           </svg>
         </div>
 
         <div class="flex-1 space-y-4">
-          <h2 class="section-title">Télétravail, appareils et Wi-Fi</h2>
+          <h2 class="section-title">
+            Télétravail, appareils et Wi-Fi
+          </h2>
+
           <p class="section-text">
             Vos appareils doivent rester sécurisés, à jour, et utilisés dans un environnement fiable.
           </p>
@@ -240,17 +275,23 @@ import logo from "../assets/eesad-logo.png";
           <div class="section-grid">
             <div class="tip-box">
               <p class="tip-title">1. Verrouillez votre écran</p>
-              <p class="tip-text">Toujours verrouiller avant de quitter votre poste.</p>
+              <p class="tip-text">
+                Toujours verrouiller avant de quitter votre poste.
+              </p>
             </div>
 
             <div class="tip-box">
               <p class="tip-title">2. Évitez le Wi-Fi public</p>
-              <p class="tip-text">Utilisez un VPN lorsque disponible.</p>
+              <p class="tip-text">
+                Utilisez un VPN lorsque disponible.
+              </p>
             </div>
 
             <div class="tip-box">
               <p class="tip-title">3. Mises à jour & antivirus</p>
-              <p class="tip-text">Ne désactivez jamais les protections EDR.</p>
+              <p class="tip-text">
+                Ne désactivez jamais les protections EDR.
+              </p>
             </div>
 
             <div class="tip-box">
@@ -272,11 +313,13 @@ import logo from "../assets/eesad-logo.png";
             class="h-8 w-8 stroke-blue-200"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5">
+            stroke-width="1.5"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M16.24 7.76a6 6 0 11-8.48 0m8.48 8.48a6 6 0 01-8.48-8.48m8.48 0L15 9m-6 6l-1.24 1.24M9 9L7.76 7.76m8.48 8.48L15 15" />
+              d="M16.24 7.76a6 6 0 11-8.48 0m8.48 8.48a6 6 0 01-8.48-8.48m8.48 0L15 9m-6 6l-1.24 1.24M9 9L7.76 7.76m8.48 8.48L15 15"
+            />
           </svg>
         </div>
 
@@ -297,87 +340,88 @@ import logo from "../assets/eesad-logo.png";
         </div>
       </section>
 
-    </div>
+    </div> <!-- END CONTENT CONTAINER -->
   </main>
-
-  <!-- Original inline styles -->
-  <style>
-    .animate-fadeIn {
-      animation: fadeIn 0.7s ease-out forwards;
-      opacity: 0;
-    }
-    .animate-fadeInSlow {
-      animation: fadeIn 1s ease-out forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-card {
-      @apply relative rounded-2xl border border-slate-800
-             bg-slate-900/60 p-6 md:p-8 flex gap-4
-             shadow-xl shadow-black/20;
-    }
-
-    .section-card-glow {
-      @apply relative rounded-2xl p-6 md:p-8 flex gap-4
-             border border-blue-400/30 bg-blue-500/10
-             shadow-[0_0_40px_-10px_rgba(0,150,255,0.4)];
-    }
-
-    .section-icon {
-      @apply h-12 w-12 flex items-center justify-center
-             rounded-2xl bg-blue-500/10 border border-blue-400/40
-             shadow-blue-500/30 shadow-lg;
-    }
-
-    .section-icon-large {
-      @apply h-14 w-14 flex items-center justify-center
-             rounded-2xl bg-blue-500/20 border border-blue-300/40
-             shadow-blue-500/40 shadow-xl;
-    }
-
-    .section-title {
-      @apply text-xl md:text-2xl font-semibold text-slate-50;
-    }
-
-    .section-text {
-      @apply text-slate-300;
-    }
-
-    .section-grid {
-      @apply grid gap-4 md:grid-cols-2 text-sm md:text-base;
-    }
-
-    .section-grid-3 {
-      @apply grid gap-4 md:grid-cols-3 text-sm md:text-base;
-    }
-
-    .tip-box {
-      @apply rounded-xl bg-slate-900/80 border border-slate-700/80 p-4;
-    }
-
-    .tip-title {
-      @apply font-semibold text-slate-100 mb-1;
-    }
-
-    .tip-text {
-      @apply text-slate-300 leading-relaxed;
-    }
-
-    .warning-box,
-    .good-box {
-      @apply mt-2 rounded-xl px-4 py-3 flex items-start gap-2 text-sm md:text-[15px];
-    }
-
-    .warning-box {
-      @apply border border-red-400/40 bg-red-500/10;
-    }
-
-    .good-box {
-      @apply border border-emerald-400/40 bg-emerald-500/10;
-    }
-  </style>
 </SiteLayout>
+
+<style>
+  /* Fade animations */
+  .animate-fadeIn {
+    animation: fadeIn 0.7s ease-out forwards;
+    opacity: 0;
+  }
+  .animate-fadeInSlow {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Section card styles */
+  .section-card {
+    @apply relative rounded-2xl border border-slate-800
+           bg-slate-900/60 p-6 md:p-8 flex gap-4
+           shadow-xl shadow-black/20;
+  }
+
+  .section-card-glow {
+    @apply relative rounded-2xl p-6 md:p-8 flex gap-4
+           border border-blue-400/30 bg-blue-500/10
+           shadow-[0_0_40px_-10px_rgba(0,150,255,0.4)];
+  }
+
+  .section-icon {
+    @apply h-12 w-12 flex items-center justify-center
+           rounded-2xl bg-blue-500/10 border border-blue-400/40
+           shadow-blue-500/30 shadow-lg;
+  }
+
+  .section-icon-large {
+    @apply h-14 w-14 flex items-center justify-center
+           rounded-2xl bg-blue-500/20 border border-blue-300/40
+           shadow-blue-500/40 shadow-xl;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-semibold text-slate-50;
+  }
+
+  .section-text {
+    @apply text-slate-300;
+  }
+
+  .section-grid {
+    @apply grid gap-4 md:grid-cols-2 text-sm md:text-base;
+  }
+
+  .section-grid-3 {
+    @apply grid gap-4 md:grid-cols-3 text-sm md:text-base;
+  }
+
+  .tip-box {
+    @apply rounded-xl bg-slate-900/80 border border-slate-700/80 p-4;
+  }
+
+  .tip-title {
+    @apply font-semibold text-slate-100 mb-1;
+  }
+
+  .tip-text {
+    @apply text-slate-300 leading-relaxed;
+  }
+
+  .warning-box,
+  .good-box {
+    @apply mt-2 rounded-xl px-4 py-3 flex items-start gap-2 text-sm md:text-[15px];
+  }
+
+  .warning-box {
+    @apply border border-red-400/40 bg-red-500/10;
+  }
+
+  .good-box {
+    @apply border border-emerald-400/40 bg-emerald-500/10;
+  }
+</style>
