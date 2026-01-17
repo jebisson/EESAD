@@ -1,0 +1,535 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
+---
+
+<SiteLayout title="Datto RMM, Datto EDR & Kaseya 365 – EÉSAD">
+
+  <!-- HEADER SLOT -->
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
+    <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+    <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+      Supervision & Cybersécurité
+    </h1>
+  </div>
+
+  <!-- HERO SLOT -->
+  <section slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10">
+
+    <!-- Glow -->
+    <div
+      class="absolute left-1/2 top-10 -translate-x-1/2 
+             w-[70%] md:w-[60%] h-24
+             bg-gradient-to-r from-emerald-500/20 via-sky-500/20 to-indigo-500/20
+             blur-[70px] opacity-80"
+    ></div>
+
+    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+      Datto RMM, Datto EDR & Kaseya 365
+    </h2>
+
+    <p class="mt-4 text-lg text-slate-300">
+      Une approche proactive : surveiller, corriger, détecter et répondre —
+      pour réduire les pannes et bloquer les menaces modernes.
+    </p>
+
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+      <a
+        href="#forfaits"
+        class="inline-block px-6 py-3 rounded-xl font-semibold
+               bg-gradient-to-r from-emerald-400 to-sky-400
+               text-slate-900 hover:brightness-110 transition"
+      >
+        Voir les forfaits
+      </a>
+      <a
+        href="#soumission"
+        class="inline-block px-6 py-3 rounded-xl font-semibold
+               bg-slate-800/60 border border-slate-700 text-slate-200
+               hover:bg-slate-700 hover:border-sky-400 transition"
+      >
+        Demande de soumission
+      </a>
+    </div>
+
+    <!-- Anchor pills -->
+    <div class="mt-8 flex flex-wrap gap-2 justify-center">
+      <a href="#rmm" class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200 hover:border-emerald-400 transition">
+        Datto RMM
+      </a>
+      <a href="#edr" class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200 hover:border-indigo-400 transition">
+        Datto EDR
+      </a>
+      <a href="#k365" class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200 hover:border-sky-400 transition">
+        Kaseya 365
+      </a>
+      <a href="#comparatif" class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200 hover:border-slate-400 transition">
+        Comparatif
+      </a>
+    </div>
+
+  </section>
+
+  <!-- FIXED BACK LINK -->
+  <a
+    href="/"
+    class="fixed right-6 top-5 z-50
+           inline-flex items-center px-4 py-2 rounded-lg
+           bg-slate-800/80 border border-slate-700 
+           text-slate-200 text-sm font-medium
+           hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+           shadow-lg backdrop-blur
+           transition-all"
+  >
+    ← Retour à la page Services TI
+  </a>
+
+  <!-- WAVE + CONTENT BAND -->
+  <section
+    class="relative w-full overflow-hidden -mt-20"
+    style={`background-color: ${bandBackground};`}
+  >
+    <!-- Under-wave lighting -->
+    <div
+      class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 
+             bg-sky-500/10 blur-3xl z-0"
+    ></div>
+
+    <!-- Gradient overlay BELOW wave -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b 
+             from-transparent to-slate-950/40
+             z-[1]"
+    ></div>
+
+    <!-- WAVE ABOVE gradient -->
+    <svg
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96 z-[2]"
+      style={`color: ${waveFill};`}
+    >
+      <path
+        fill="currentColor"
+        d="
+          M0,220
+          C240,140 480,300 720,220
+          C960,140 1200,300 1440,220
+          L1440,0 L0,0 Z
+        "
+      />
+    </svg>
+
+    <!-- Extra glow behind cards -->
+    <div
+      class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0"
+      style={`background-color: ${glowColor};`}
+    ></div>
+
+    <!-- CONTENT -->
+    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-20 mt-28">
+
+      <!-- Intro -->
+      <section class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-4 text-slate-300 text-md leading-relaxed">
+          <h3 class="text-2xl font-semibold text-slate-100">
+            Une TI fiable, sans surprises
+          </h3>
+          <p>
+            Le but : réduire les incidents, accélérer le support et limiter l’impact
+            des cybermenaces avec une approche proactive.
+          </p>
+          <ul class="list-disc ml-6 space-y-2 text-slate-300 text-base">
+            <li>Surveillance et alertes 24/7</li>
+            <li>Correctifs et entretien automatisés</li>
+            <li>Détection avancée (ransomware, comportements suspects)</li>
+            <li>Réponse rapide en cas d’incident</li>
+          </ul>
+        </div>
+
+        <div class="grid gap-6">
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">🔍</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Visibilité complète</p>
+              <p class="text-slate-400 text-sm">État du parc, alertes, posture sécurité.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">⚙️</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Automatisation</p>
+              <p class="text-slate-400 text-sm">Patching, scripts, remédiations.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">🛡️</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Protection moderne</p>
+              <p class="text-slate-400 text-sm">Détection comportementale & réponse.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Datto RMM -->
+      <section id="rmm" class="space-y-6">
+        <div class="flex items-baseline justify-between gap-6 flex-wrap">
+          <h3 class="text-2xl font-semibold text-slate-100">Datto RMM</h3>
+          <span class="text-sm text-slate-400">Supervision & maintenance proactive</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-emerald-300">Surveillance 24/7</h4>
+            <p class="text-slate-300 text-sm">Alertes en temps réel sur la santé des postes/serveurs.</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-emerald-300">Patching & maintenance</h4>
+            <p class="text-slate-300 text-sm">Correctifs et tâches d’entretien automatisés, moins d’incidents.</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-emerald-300">Automatisation</h4>
+            <p class="text-slate-300 text-sm">Scripts, remédiations, inventaire et optimisation continue.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Datto EDR -->
+      <section id="edr" class="space-y-6">
+        <div class="flex items-baseline justify-between gap-6 flex-wrap">
+          <h3 class="text-2xl font-semibold text-slate-100">Datto EDR</h3>
+          <span class="text-sm text-slate-400">Détection & réponse (menaces avancées)</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-indigo-300">Détection comportementale</h4>
+            <p class="text-slate-300 text-sm">Bloque les attaques même inconnues (ransomware, intrusions).</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-indigo-300">Isolation & réponse</h4>
+            <p class="text-slate-300 text-sm">Limite la propagation et accélère la remédiation.</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-indigo-300">Traçabilité</h4>
+            <p class="text-slate-300 text-sm">Meilleure visibilité pour comprendre et documenter un incident.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kaseya 365 -->
+      <section id="k365" class="space-y-6">
+        <div class="flex items-baseline justify-between gap-6 flex-wrap">
+          <h3 class="text-2xl font-semibold text-slate-100">Kaseya 365</h3>
+          <span class="text-sm text-slate-400">Suite sécurité centralisée</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-sky-300">Centralisation</h4>
+            <p class="text-slate-300 text-sm">Une vue d’ensemble sécurité et contrôle cohérent.</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-sky-300">Réponse automatisée</h4>
+            <p class="text-slate-300 text-sm">Réduit le temps de réaction et les angles morts.</p>
+          </div>
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="font-semibold text-lg mb-2 text-sky-300">Posture sécurité</h4>
+            <p class="text-slate-300 text-sm">Rapports et indicateurs pour piloter vos priorités.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forfaits -->
+      <section id="forfaits" class="space-y-8">
+        <h3 class="text-center text-slate-400 text-xs uppercase tracking-[0.25em]">
+          Forfaits mensuels
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="rounded-2xl p-8 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="text-xl font-semibold mb-2 text-emerald-300">RMM + EDR</h4>
+            <p class="text-xl mb-2 text-slate-300">Supervision + protection avancée</p>
+            <p class="mb-5">
+              <span class="font-extrabold text-5xl text-slate-100">$6</span>
+              <span class="text-slate-400"> / utilisateur / mois</span>
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+              <li>Monitoring 24/7</li>
+              <li>Patching & maintenance automatisés</li>
+              <li>Détection & réponse EDR</li>
+              <li>Support et remédiation</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl p-8 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <h4 class="text-xl font-semibold mb-2 text-sky-300">Kaseya 365</h4>
+            <p class="text-xl mb-2 text-slate-300">Suite centralisée</p>
+            <p class="mb-5">
+              <span class="font-extrabold text-5xl text-slate-100">$8</span>
+              <span class="text-slate-400"> / utilisateur / mois</span>
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+              <li>Gestion sécurité centralisée</li>
+              <li>Visibilité posture sécurité</li>
+              <li>Réponses automatisées</li>
+              <li>Rapports et recommandations</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl p-8 bg-gradient-to-br from-emerald-600 to-sky-600 text-white shadow-xl border border-emerald-400">
+            <h4 class="text-xl font-semibold mb-2">Tous les services</h4>
+            <p class="text-xl mb-2 opacity-90">Maximum protection + maximum automatisation</p>
+            <p class="mb-5">
+              <span class="font-extrabold text-6xl">$13</span>
+              <span class="opacity-90"> / utilisateur / mois</span>
+            </p>
+            <ul class="list-disc ml-6 space-y-2 text-sm">
+              <li>Datto RMM + Datto EDR</li>
+              <li>Kaseya 365</li>
+              <li>Support prioritaire</li>
+              <li>Revue sécurité & roadmap</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-slate-400 text-xs">
+          * Prix par utilisateur/mois. Certaines conditions peuvent s’appliquer selon l’environnement.
+        </p>
+      </section>
+
+      <!-- Comparatif -->
+      <section id="comparatif" class="space-y-6">
+        <h3 class="text-2xl font-semibold text-slate-100">Tableau comparatif</h3>
+
+        <div class="rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="bg-slate-900/50 text-slate-300">
+                <tr>
+                  <th class="text-left px-5 py-4 font-semibold">Fonction</th>
+                  <th class="text-left px-5 py-4 font-semibold">RMM + EDR (6$)</th>
+                  <th class="text-left px-5 py-4 font-semibold">Kaseya 365 (8$)</th>
+                  <th class="text-left px-5 py-4 font-semibold">Combiné (13$)</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-300">
+                {[
+                  ["Surveillance 24/7 & alertes", "✅", "—", "✅"],
+                  ["Correctifs / patching automatisé", "✅", "—", "✅"],
+                  ["Automatisation (scripts / remédiation)", "✅", "—", "✅"],
+                  ["Inventaire / visibilité parc", "✅", "—", "✅"],
+                  ["Détection comportementale (EDR)", "✅", "✅", "✅"],
+                  ["Isolation / réponse incident", "✅", "✅", "✅"],
+                  ["Suite centralisée / gouvernance", "—", "✅", "✅"],
+                  ["Support prioritaire & roadmap", "—", "—", "✅"],
+                ].map(([feature, a, b, c]) => (
+                  <tr class="border-t border-slate-700/60">
+                    <td class="px-5 py-4">{feature}</td>
+                    <td class="px-5 py-4">{a}</td>
+                    <td class="px-5 py-4">{b}</td>
+                    <td class="px-5 py-4">{c}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Soumission (formulaire coulissant) -->
+      <section id="soumission">
+        <div class="rounded-2xl p-10 bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl border border-slate-700 relative">
+          <h4 class="text-3xl font-semibold mb-3">Demande de soumission</h4>
+
+          <p class="text-slate-300 mb-6">
+            Indique le nombre d’utilisateurs et les services souhaités. On te revient rapidement.
+          </p>
+
+          <button
+            id="openQuoteBtn"
+            class="inline-block mt-2 px-8 py-3 rounded-xl font-semibold 
+                   bg-white text-slate-900 hover:bg-slate-100 transition"
+          >
+            Ouvrir le formulaire
+          </button>
+
+          <div
+            id="quoteFormContainer"
+            class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 mt-6"
+          >
+            <form
+              id="quoteForm"
+              class="space-y-4 bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20"
+            >
+              <h5 class="text-xl font-semibold mb-2">Informations</h5>
+
+              <label class="block text-sm font-medium">Nom de l’organisation</label>
+              <input
+                type="text"
+                name="quote_org"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <label class="block text-sm font-medium">Courriel</label>
+              <input
+                type="email"
+                name="quote_email"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Nombre d’utilisateurs</label>
+                  <input
+                    type="number"
+                    name="quote_users"
+                    min="1"
+                    required
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium">Téléphone (optionnel)</label>
+                  <input
+                    type="text"
+                    name="quote_phone"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+              </div>
+
+              <h6 class="text-sm font-semibold text-white/90 mt-2">Services souhaités</h6>
+
+              <div class="grid md:grid-cols-2 gap-3 text-sm">
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="svc_rmm_edr" value="yes" class="accent-white" />
+                  RMM + EDR (6$)
+                </label>
+
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" name="svc_k365" value="yes" class="accent-white" />
+                  Kaseya 365 (8$)
+                </label>
+
+                <label class="flex items-center gap-2 md:col-span-2">
+                  <input type="checkbox" name="svc_bundle" value="yes" class="accent-white" />
+                  Tous les services (13$)
+                </label>
+              </div>
+
+              <label class="block text-sm font-medium mt-2">Notes (optionnel)</label>
+              <textarea
+                name="quote_notes"
+                rows="4"
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                placeholder="Ex : télétravail, serveurs, sites multiples, exigences conformité, etc."
+              ></textarea>
+
+              <button
+                type="submit"
+                class="mt-4 w-full px-4 py-2 bg-white text-slate-900 rounded-lg font-semibold
+                       hover:bg-slate-100 transition"
+              >
+                Envoyer la demande
+              </button>
+
+              <button
+                type="button"
+                id="closeQuoteBtn"
+                class="mt-2 w-full px-4 py-2 bg-white/10 text-white rounded-lg font-medium
+                       border border-white/20 hover:bg-white/20 transition"
+              >
+                Fermer
+              </button>
+
+              <p id="quoteStatus" class="text-sm text-white/80 mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Loi 25 -->
+      <section class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+        <div class="flex items-start gap-4">
+          <div class="text-3xl">🧾</div>
+          <div>
+            <h4 class="text-xl font-semibold mb-2 text-blue-300">Conformité & bonnes pratiques</h4>
+            <p class="leading-relaxed text-slate-300">
+              Ces services améliorent la visibilité, la détection et la réponse aux incidents —
+              une base solide pour réduire les risques, soutenir les exigences (ex : Loi 25) et
+              documenter la gestion de la sécurité.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  const btn = document.getElementById("openQuoteBtn");
+  const closeBtn = document.getElementById("closeQuoteBtn");
+  const panel = document.getElementById("quoteFormContainer");
+  const form = document.getElementById("quoteForm");
+  const status = document.getElementById("quoteStatus");
+
+  if (btn && closeBtn && panel && form && status) {
+    // OPEN PANEL
+    btn.addEventListener("click", () => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = "1";
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // CLOSE PANEL
+    closeBtn.addEventListener("click", () => {
+      panel.style.maxHeight = "0";
+      panel.style.opacity = "0";
+    });
+
+    // FORM SUBMISSION — SAME AS YOUR EXISTING /api/submit
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const data = {};
+      for (const [k, v] of fd.entries()) data[k] = v;
+
+      status.textContent = "Envoi…";
+
+      try {
+        const res = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          status.textContent = "Demande envoyée!";
+          form.reset();
+        } else {
+          status.textContent = "Erreur d’envoi.";
+        }
+      } catch (err) {
+        status.textContent = "Erreur réseau.";
+      }
+    });
+  }
+</script>
