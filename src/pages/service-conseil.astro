@@ -1,0 +1,424 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
+
+const inclus = [
+  {
+    title: "Vérification de soumissions",
+    desc: "Analyse comparative (prix, portée, exclusions, garanties) et recommandations pour choisir la meilleure option."
+  },
+  {
+    title: "Consultation stratégique",
+    desc: "Orientation TI, gouvernance, priorités cybersécurité, planification et optimisation des coûts."
+  },
+  {
+    title: "Avis technique neutre",
+    desc: "Validation d’architecture, choix de solutions (M365, sauvegarde, sécurité, réseaux), impacts et risques."
+  },
+  {
+    title: "Revue de posture & bonnes pratiques",
+    desc: "Recommandations de base (MFA, accès admin, partage externe, politiques) et “quick wins”."
+  },
+  {
+    title: "Aide à la rédaction",
+    desc: "Cahier des charges, listes d’exigences, critères d’évaluation, questions aux fournisseurs."
+  },
+  {
+    title: "Accompagnement décisionnel",
+    desc: "Réunions avec direction / gestionnaires pour clarifier besoins, options et trajectoire."
+  }
+];
+
+const nonInclus = [
+  "Interventions techniques (installation, configuration, support utilisateurs, dépannage)",
+  "Gestion quotidienne TI (services gérés, RMM/EDR, opérations 24/7)",
+  "Travaux sur site / déplacements",
+  "Implantations de projet (migrations, déploiements, mise en production)",
+  "Accès administratif à vos systèmes (sauf cas d’audit convenu séparément)",
+];
+---
+
+<SiteLayout title="Service conseil TI – Réseau EÉSAD">
+
+  <!-- HEADER SLOT -->
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
+    <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+    <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+      Service conseil TI
+    </h1>
+  </div>
+
+  <!-- HERO SLOT -->
+  <section slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10">
+
+    <div
+      class="absolute left-1/2 top-10 -translate-x-1/2 
+             w-[70%] md:w-[60%] h-24
+             bg-gradient-to-r from-sky-500/20 via-indigo-500/20 to-purple-500/20
+             blur-[70px] opacity-80"
+    ></div>
+
+    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+      Conseil TI pour les organisations membres du réseau EÉSAD
+    </h2>
+
+    <p class="mt-4 text-lg text-slate-300">
+      Les organisations qui contribuent financièrement au réseau EÉSAD ont accès à des heures de
+      service conseil TI : validation de soumissions, consultation et recommandations.
+      <span class="text-slate-200 font-semibold">Ce service n’inclut pas d’interventions informatiques.</span>
+    </p>
+
+    <a
+      href="#demande"
+      class="inline-block mt-6 px-6 py-3 rounded-xl font-semibold
+             bg-gradient-to-r from-sky-400 to-indigo-400
+             text-slate-900 hover:brightness-110 transition"
+    >
+      Demander une consultation
+    </a>
+  </section>
+
+  <!-- FIXED BACK LINK -->
+  <a
+    href="/"
+    class="fixed right-6 top-5 z-50
+           inline-flex items-center px-4 py-2 rounded-lg
+           bg-slate-800/80 border border-slate-700 
+           text-slate-200 text-sm font-medium
+           hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+           shadow-lg backdrop-blur
+           transition-all"
+  >
+    ← Retour à la page Services TI
+  </a>
+
+  <!-- WAVE + CONTENT BAND -->
+  <section
+    class="relative w-full overflow-hidden -mt-20"
+    style={`background-color: ${bandBackground};`}
+  >
+    <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 bg-sky-500/10 blur-3xl z-0"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/40 z-[1]"></div>
+
+    <svg
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96 z-[2]"
+      style={`color: ${waveFill};`}
+    >
+      <path
+        fill="currentColor"
+        d="M0,220 C240,140 480,300 720,220 C960,140 1200,300 1440,220 L1440,0 L0,0 Z"
+      />
+    </svg>
+
+    <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0" style={`background-color: ${glowColor};`}></div>
+
+    <!-- CONTENT -->
+    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-20 mt-28">
+
+      <!-- WHAT IT IS -->
+      <section class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-4 text-slate-300 leading-relaxed">
+          <h3 class="text-2xl font-semibold text-slate-100">
+            À quoi sert le service conseil?
+          </h3>
+          <p>
+            À vous aider à prendre de meilleures décisions TI : comprendre vos options,
+            réduire les risques, éviter les mauvaises surprises et choisir des fournisseurs
+            avec une portée claire.
+          </p>
+
+          <ul class="list-disc ml-6 space-y-2 text-slate-300 text-base">
+            <li>Analyse et validation de soumissions</li>
+            <li>Consultations (Teams/SharePoint/Microsoft 365, cybersécurité, sauvegarde)</li>
+            <li>Recommandations neutres, orientées “meilleures pratiques”</li>
+            <li>Support à la planification et à la gouvernance</li>
+          </ul>
+        </div>
+
+        <div class="grid gap-6">
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">🧠</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Conseil neutre</p>
+              <p class="text-slate-400 text-sm">On clarifie les options, les risques et la portée.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">📑</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Validation de soumissions</p>
+              <p class="text-slate-400 text-sm">On compare et on vous aide à poser les bonnes questions.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-6 rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-2xl">🛡️</div>
+            <div>
+              <p class="text-slate-200 font-semibold">Réduction des risques</p>
+              <p class="text-slate-400 text-sm">Priorités sécurité et “quick wins” réalistes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INCLUDED -->
+      <section class="space-y-6">
+        <h3 class="text-2xl font-semibold text-slate-100">
+          Ce qui est inclus
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {inclus.map((x) => (
+            <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+              <h4 class="font-semibold text-lg mb-2 text-sky-300">{x.title}</h4>
+              <p class="text-slate-300 text-sm">{x.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- NOT INCLUDED -->
+      <section class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+        <h3 class="text-xl font-semibold mb-3 text-rose-200">
+          Ce qui n’est pas inclus (important)
+        </h3>
+        <p class="text-slate-300 mb-4">
+          Le service conseil vise la <span class="text-slate-100 font-semibold">consultation</span> et la
+          <span class="text-slate-100 font-semibold"> validation</span>. Il ne comprend pas d’interventions techniques.
+        </p>
+        <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+          {nonInclus.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="space-y-6">
+        <h3 class="text-2xl font-semibold text-slate-100">
+          Comment ça fonctionne
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-slate-400 text-xs uppercase tracking-[0.25em]">Étape 1</div>
+            <h4 class="mt-2 font-semibold text-lg text-slate-100">Demande</h4>
+            <p class="mt-2 text-slate-300 text-sm">
+              Vous décrivez le besoin (soumission à vérifier, choix technologique, question sécurité, etc.).
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-slate-400 text-xs uppercase tracking-[0.25em]">Étape 2</div>
+            <h4 class="mt-2 font-semibold text-lg text-slate-100">Consultation</h4>
+            <p class="mt-2 text-slate-300 text-sm">
+              Rencontre courte (Teams) + collecte des infos nécessaires (docs, devis, contexte).
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-6 bg-slate-800/40 backdrop-blur border border-slate-700">
+            <div class="text-slate-400 text-xs uppercase tracking-[0.25em]">Étape 3</div>
+            <h4 class="mt-2 font-semibold text-lg text-slate-100">Recommandations</h4>
+            <p class="mt-2 text-slate-300 text-sm">
+              Retour clair : points à valider, risques, questions au fournisseur, prochaines étapes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / REQUEST -->
+      <section id="demande">
+        <div
+          class="rounded-2xl p-10 bg-gradient-to-br from-sky-600 to-indigo-600 
+                 text-white shadow-xl border border-sky-500 relative"
+        >
+          <h3 class="text-3xl font-semibold mb-3">Demander une consultation</h3>
+
+          <p class="text-lg mb-6">
+            Utilisez ce formulaire pour déclencher une demande de service conseil TI.
+            <span class="font-semibold">Aucune intervention technique</span> n’est incluse.
+          </p>
+
+          <button
+            id="openFormBtn"
+            class="inline-block mt-2 px-8 py-3 rounded-xl font-semibold 
+                   bg-white text-sky-700 hover:bg-slate-100 transition"
+          >
+            Ouvrir le formulaire
+          </button>
+
+          <!-- HIDDEN FORM -->
+          <div
+            id="formContainer"
+            class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 mt-6"
+          >
+            <form
+              id="consultForm"
+              class="space-y-4 bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20"
+            >
+              <h4 class="text-xl font-semibold mb-2">Demande – Service conseil TI</h4>
+
+              <label class="block text-sm font-medium">Organisation</label>
+              <input
+                type="text"
+                name="conseil_org"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <label class="block text-sm font-medium">Courriel</label>
+              <input
+                type="email"
+                name="conseil_email"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Téléphone (optionnel)</label>
+                  <input
+                    type="text"
+                    name="conseil_phone"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium">Type de demande</label>
+                  <select
+  name="conseil_type"
+  class="w-full rounded-lg px-3 py-2
+         bg-white/20 text-white
+         border border-white/30
+         focus:ring-2 focus:ring-white
+         focus:outline-none"
+>
+
+                    <option class="bg-white text-slate-900" value="verification_soumission">
+  Vérification de soumission
+</option>
+
+<option class="bg-white text-slate-900" value="consultation">
+  Consultation / avis technique
+</option>
+
+<option class="bg-white text-slate-900" value="gouvernance">
+  Gouvernance / planification
+</option>
+
+<option class="bg-white text-slate-900" value="autre">
+  Autre
+</option>
+
+
+                  </select>
+                </div>
+              </div>
+
+              <label class="block text-sm font-medium">Détails</label>
+              <textarea
+                name="conseil_details"
+                rows="5"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                placeholder="Décrivez votre besoin (ex : soumission à comparer, contexte, échéancier, risques, questions)."
+              ></textarea>
+
+              <div class="rounded-lg bg-white/10 border border-white/20 p-4 text-sm">
+                <p class="font-semibold">Important</p>
+                <p class="opacity-90">
+                  Cette demande concerne un service conseil (consultation, validation, recommandations).
+                  Elle n’inclut pas d’intervention technique (installation, configuration, dépannage).
+                </p>
+              </div>
+
+              <input type="hidden" name="conseil_source" value="service-conseil" />
+
+              <button
+                type="submit"
+                class="mt-3 w-full px-4 py-2 bg-white text-sky-700 rounded-lg font-semibold
+                       hover:bg-slate-100 transition"
+              >
+                Envoyer la demande
+              </button>
+
+              <button
+                type="button"
+                id="closeFormBtn"
+                class="mt-2 w-full px-4 py-2 bg-white/10 text-white rounded-lg font-medium
+                       border border-white/20 hover:bg-white/20 transition"
+              >
+                Fermer
+              </button>
+
+              <p id="status" class="text-sm text-white/80 mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  const btn = document.getElementById("openFormBtn");
+  const closeBtn = document.getElementById("closeFormBtn");
+  const panel = document.getElementById("formContainer");
+  const form = document.getElementById("consultForm");
+  const status = document.getElementById("status");
+
+  if (btn && closeBtn && panel && form && status) {
+    // OPEN PANEL
+    btn.addEventListener("click", () => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = "1";
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // CLOSE PANEL
+    closeBtn.addEventListener("click", () => {
+      panel.style.maxHeight = "0";
+      panel.style.opacity = "0";
+    });
+
+    // SUBMIT — SAME ENDPOINT AS OTHER PAGES
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const data = {};
+      for (const [k, v] of fd.entries()) data[k] = v;
+
+      status.textContent = "Envoi…";
+
+      try {
+        const res = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          status.textContent = "Demande envoyée!";
+          form.reset();
+        } else {
+          status.textContent = "Erreur d’envoi.";
+        }
+      } catch (err) {
+        status.textContent = "Erreur réseau.";
+      }
+    });
+  }
+</script>

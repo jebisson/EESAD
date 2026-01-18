@@ -1,0 +1,266 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
+
+const points = [
+  {
+    t: "Protection antivirus moderne (MISE À JOUR IMPORTANTE)",
+    lead: [
+      "Microsoft n’offre plus gratuitement la licence Business Premium, qui incluait une suite complète d’outils de sécurité. Cette évolution du modèle de licences ouvre la porte à l’utilisation de plateformes de sécurité tierces plus performantes, désormais offertes à un coût comparable.",
+      "Ainsi, il est désormais possible de mettre en place une solution de sécurité intégrée, surveillée 24 heures sur 24, 7 jours sur 7, adaptée aux besoins et à la réalité financière des organismes d’aide a domicile.",
+      "Une telle solution permet de détecter, bloquer et corriger les menaces en temps réel. Les fonctionnalités EDR (Endpoint Detection and Response) assurent une surveillance constante des comportements anormaux, et tout poste compromis peut être automatiquement isolé afin de limiter la propagation d’une attaque au reste de l’organisation."
+    ]
+  },
+
+  {
+    t: "Inventaire et désuétude des systèmes",
+    lead: [
+      "L’utilisation de systèmes ou d’équipements désuets accroît les risques de vulnérabilité. L’intégration de Microsoft Intune ou d’une solution de gestion à distance (RMM) permet de maintenir un inventaire complet et à jour des actifs, tout en automatisant la détection et le remplacement des systèmes obsolètes."
+    ]
+  },
+
+  {
+    t: "Détection des vulnérabilités et application des correctifs",
+    lead: [
+      "Une stratégie de mise à jour automatisée via Windows Update et Intune ou la plateforme de sécurité intégrée assure une protection continue contre les failles connues. La gestion centralisée permet d’appliquer rapidement les correctifs de sécurité sur tous les appareils, y compris ceux utilisés à distance."
+    ]
+  },
+
+  {
+    t: "Authentification multi-facteurs (MFA)",
+    lead: [
+      "L’activation de l’authentification multi-facteurs à travers Entra ID renforce significativement la sécurité des comptes utilisateurs. Elle empêche l’accès non autorisé même en cas de compromission d’un mot de passe."
+    ]
+  },
+
+  {
+    t: "Sauvegarde et reprise des données Microsoft 365",
+    lead: [
+      "Une solution de sauvegarde Microsoft 365 couvrant Exchange, OneDrive, SharePoint et Teams est essentielle pour prévenir la perte de données. La planification de tests de restauration périodiques et la conservation hors site garantissent la résilience opérationnelle."
+    ]
+  },
+
+  {
+    t: "Sécurisation des communications électroniques",
+    lead: [
+      "Les échanges de données confidentielles doivent être protégés par le chiffrement et la sensibilisation des utilisateurs. Microsoft 365 offre des options intégrées de chiffrement de messages et de prévention de la perte de données (DLP)."
+    ]
+  },
+
+  {
+    t: "Analyse des vulnérabilités externes",
+    lead: [
+      "Une veille continue sur les services exposés à Internet permet d’identifier et de corriger les failles rapidement. L’utilisation de Microsoft Defender External Attack Surface Management ou d’un service équivalent permet cette surveillance proactive."
+    ]
+  },
+
+  {
+    t: "Journalisation et surveillance continue",
+    lead: [
+      "La journalisation des accès et la détection des anomalies via Microsoft 365 Defender ou la plateforme de sécurité intégrée offrent une visibilité complète sur les événements de sécurité. La corrélation automatisée des alertes réduit le délai de détection et de réponse aux incidents."
+    ]
+  },
+
+  {
+    t: "Notifications d’accès et de modifications de compte",
+    lead: [
+      "Les utilisateurs doivent être informés de tout changement à leur compte ou de toute connexion inhabituelle. Un système de sécurité intégré permet de configurer des alertes automatisées pour renforcer la transparence et la sécurité."
+    ]
+  },
+
+  {
+    t: "Transmission sécurisée des informations",
+    lead: [
+      "Les données sensibles doivent être échangées à l’aide de solutions sécurisées et chiffrées, telles que SharePoint ou OneDrive avec liens protégés, plutôt que par courriel non sécurisé."
+    ]
+  },
+
+  {
+    t: "Directives d’utilisation des outils numériques",
+    lead: [
+      "Une politique claire sur l’utilisation du courriel, d’Internet et des outils Microsoft 365 favorise des comportements sécuritaires et cohérents. Les employés doivent savoir comment réagir à un incident de sécurité."
+    ]
+  },
+
+  {
+    t: "Gestion des accès et des privilèges",
+    lead: [
+      "Une gestion rigoureuse des accès selon le principe du moindre privilège doit être appliquée. Entra ID et Intune permettent d’automatiser l’ajout, la révision et la révocation des accès, incluant les rôles administratifs."
+    ]
+  },
+
+  {
+    t: "Formation et culture de la sécurité",
+    lead: [
+      "La sensibilisation continue des employés aux menaces numériques – hameçonnage, rançongiciels, ingénierie sociale – renforce la première ligne de défense de toute organisation. Les formations régulières et les rappels intégrés à Microsoft 365 favorisent une culture de vigilance."
+    ]
+  },
+
+  {
+    t: "Score de sécurité",
+    lead: [
+      "Microsoft 365 met à disposition un outil d’autoévaluation du niveau de sécurité au sein du Centre d’administration Defender.",
+      "Ce score de sécurité permet d’obtenir un portrait clair des mesures de protection déjà en place et de celles qui doivent être renforcées pour assurer une meilleure résilience de la plateforme.",
+      "Toutefois, de nombreuses organisations, notamment dans le réseau des EÉSAD, se fient encore à la configuration de base de Microsoft 365, laquelle demeure insuffisante pour atteindre un niveau de sécurité optimal."
+    ]
+  }
+];
+---
+
+<SiteLayout title="ÉÉSAD — 15 Points de Sécurité">
+
+  <!-- HEADER SLOT -->
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
+    <img src={logo.src} alt="ÉÉSAD" class="h-20 w-auto" />
+    <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+      Services TI
+    </h1>
+  </div>
+
+  <!-- HERO SLOT -->
+  <div slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10 pt-4 pb-12">
+    <!-- HERO GLOW -->
+    <div
+      class="absolute left-1/2 top-12 -translate-x-1/2
+             w-[70%] md:w-[60%] h-24
+             bg-blue-400/30 blur-[70px] opacity-80"
+    ></div>
+
+    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-100 mb-4">
+      Faites de la cybersécurité un réflexe quotidien.
+    </h2>
+
+    <h3 class="text-lg md:text-xl font-semibold text-slate-300">
+      Sécurité et résilience numérique – Bonnes pratiques et modernisation avec Microsoft 365.
+    </h3>
+
+    <p class="mt-2 text-sm text-slate-400">
+      Survolez chaque point pour voir le détail.
+    </p>
+  </div>
+
+  <!-- FIXED BACK LINK -->
+  <a
+    href="/"
+    class="fixed right-6 top-5 z-50
+           inline-flex items-center px-4 py-2 rounded-lg
+           bg-slate-800/80 border border-slate-700 
+           text-slate-200 text-sm font-medium
+           hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+           shadow-lg backdrop-blur
+           transition-all"
+  >
+    ← Retour à la page Services TI
+  </a>
+
+  <!-- WAVE + CARDS -->
+  <section
+    class="relative w-full overflow-hidden -mt-20"
+    style={`background-color: ${bandBackground};`}
+  >
+    <!-- Under-wave lighting -->
+      <div
+        class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0"
+        style={`background-color: ${glowColor};`}
+      ></div>
+
+
+    <!-- Gradient overlay (under wave) -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b 
+             from-transparent to-slate-950/40
+             z-[1]"
+    ></div>
+
+    <!-- Wave (on top of gradient) -->
+    <svg
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96
+             z-[2]"
+      style={`color: ${waveFill};`}
+    >
+      <path
+        fill="currentColor"
+        d="
+          M0,220
+          C240,140 480,300 720,220
+          C960,140 1200,300 1440,220
+          L1440,0 L0,0 Z
+        "
+      />
+    </svg>
+
+    <!-- Ambient glow under cards -->
+    <div
+      class="absolute left-1/2 top-48 -translate-x-1/2 w-[70%] h-32 
+             bg-blue-500/5 blur-3xl rounded-full z-[1]"
+    ></div>
+
+    <!-- CARDS GRID -->
+    <div class="relative z-[3] mx-auto max-w-5xl px-4 pt-16 pb-24 grid gap-8">
+      {points.map((p, i) => (
+        <section
+          class="group relative overflow-hidden rounded-2xl
+                 border border-slate-700 bg-slate-900/80
+                 p-6 shadow-md transition-all duration-300
+                 hover:-translate-y-2 hover:scale-[1.01]
+                 hover:border-sky-400/70 hover:shadow-sky-500/20"
+        >
+          <!-- Hover tint -->
+          <div
+            class="pointer-events-none absolute inset-0 
+                   bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/20
+                   opacity-0 transition-opacity duration-300 
+                   group-hover:opacity-100"
+          ></div>
+
+          <div class="flex items-start gap-5 relative">
+            <!-- NUMBER BADGE -->
+            <div class="relative shrink-0">
+              <div
+                class="absolute -top-2 left-1/2 -translate-x-1/2
+                       w-16 h-8 rounded-t-full
+                       bg-blue-900/40 blur-md"
+              ></div>
+
+              <div
+                class="relative grid place-items-center w-16 h-16 rounded-full
+                       bg-slate-900 ring-4 ring-sky-500/30
+                       shadow-[0_0_25px_rgba(56,189,248,0.15)]
+                       group-hover:shadow-[0_0_35px_rgba(56,189,248,0.35)]
+                       transition"
+              >
+                <span class="text-3xl font-extrabold text-sky-300 leading-none">
+                  {i + 1}
+                </span>
+              </div>
+            </div>
+
+            <div class="flex-1">
+              <h3 class="text-xl md:text-2xl font-semibold text-slate-100">
+                {p.t}
+              </h3>
+
+              <div
+                class="mt-3 space-y-3 opacity-0 max-h-0 overflow-hidden
+                       transition-all duration-300
+                       group-hover:opacity-100 group-hover:max-h-[600px]"
+              >
+                {p.lead.map((paragraph) => (
+                  <p class="text-[15px] leading-relaxed text-slate-300">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</SiteLayout>
