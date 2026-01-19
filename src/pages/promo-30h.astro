@@ -1,0 +1,393 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
+
+const inclus = [
+  "Soutien technique (remote) et interventions planifiées",
+  "Résolution de problèmes (poste, M365, imprimantes, VPN, accès, etc.)",
+  "Optimisation & maintenance (selon contexte)",
+  "Conseils rapides pendant l’intervention (bonnes pratiques, prévention)",
+  "Suivi et documentation de ce qui a été fait",
+];
+
+const nonInclus = [
+  "Frais de déplacement / interventions sur site (si requis : sur entente)",
+  "Projets majeurs (migrations, déploiements complets) — sur soumission",
+  "Matériel, licences, services tiers (facturés séparément)",
+  "Support 24/7 (sauf entente spécifique)",
+];
+
+const conditions = [
+  "Banque de 30 heures payable d’avance (ou selon modalités convenues).",
+  "Rabais de 50% applicable uniquement à cette offre promo.",
+  "Validité recommandée : à utiliser dans une période déterminée (ex : 6 à 12 mois) selon l’entente.",
+  "Les heures sont déduites au temps réellement travaillé (arrondi selon politique interne).",
+  "Un pré-diagnostic peut être requis avant certaines interventions.",
+];
+---
+
+<SiteLayout title="Promo – Banque de 30h de soutien technique (50% de rabais)">
+
+  <!-- HEADER SLOT -->
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
+    <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+    <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+      Promotion
+    </h1>
+  </div>
+
+  <!-- HERO SLOT -->
+  <section slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10">
+    <div
+      class="absolute left-1/2 top-10 -translate-x-1/2
+             w-[70%] md:w-[60%] h-24
+             bg-gradient-to-r from-sky-500/25 via-indigo-500/25 to-purple-500/25
+             blur-[70px] opacity-80"
+    ></div>
+
+    <p class="text-xs uppercase tracking-[0.25em] text-slate-400">
+      Offre limitée
+    </p>
+
+    <h2 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+      50% de rabais sur une banque de <span class="text-sky-300 font-extrabold">30 heures</span>
+    </h2>
+
+    <p class="mt-4 text-lg text-slate-300">
+      Parfait pour stabiliser votre environnement, accélérer vos demandes et planifier des améliorations
+      — sans surprises, avec une banque d’heures claire.
+    </p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a
+        href="#demande"
+        class="inline-block px-6 py-3 rounded-xl font-semibold
+               bg-gradient-to-r from-sky-400 to-indigo-400
+               text-slate-900 hover:brightness-110 transition"
+      >
+        Profiter de l’offre
+      </a>
+
+      <a
+        href="#details"
+        class="inline-block px-6 py-3 rounded-xl font-semibold
+               bg-slate-800/60 border border-slate-700 text-slate-200
+               hover:bg-slate-700 hover:border-sky-400 transition"
+      >
+        Voir les détails
+      </a>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-2 justify-center">
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Banque : 30h
+      </span>
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Rabais : 50%
+      </span>
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Support / interventions
+      </span>
+    </div>
+  </section>
+
+  <!-- FIXED BACK LINK -->
+  <a
+    href="/"
+    class="fixed right-6 top-5 z-50
+           inline-flex items-center px-4 py-2 rounded-lg
+           bg-slate-800/80 border border-slate-700
+           text-slate-200 text-sm font-medium
+           hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+           shadow-lg backdrop-blur
+           transition-all"
+  >
+    ← Retour à la page Services TI
+  </a>
+
+  <!-- WAVE + CONTENT BAND -->
+  <section class="relative w-full overflow-hidden -mt-20" style={`background-color: ${bandBackground};`}>
+
+    <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 bg-sky-500/10 blur-3xl z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/40 z-[1]"></div>
+
+    <svg
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96 z-[2]"
+      style={`color: ${waveFill};`}
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        d="M0,220 C240,140 480,300 720,220 C960,140 1200,300 1440,220 L1440,0 L0,0 Z"
+      />
+    </svg>
+
+    <div
+      class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0"
+      style={`background-color: ${glowColor};`}
+    ></div>
+
+    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-16 mt-28">
+
+      <!-- Promo Banner Card -->
+      <section class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/80 p-8 md:p-10 shadow-md">
+        <!-- “Network-like” background (CSS only) -->
+        <div
+          class="absolute inset-0 opacity-90"
+          style={`background:
+            radial-gradient(900px 260px at 15% 20%, rgba(56,189,248,.35), transparent 60%),
+            radial-gradient(700px 240px at 80% 30%, rgba(99,102,241,.25), transparent 55%),
+            radial-gradient(500px 220px at 55% 85%, rgba(59,130,246,.18), transparent 60%),
+            linear-gradient(to bottom, rgba(2,6,23,.25), rgba(2,6,23,.85));
+          `}
+        ></div>
+
+        <div
+          class="pointer-events-none absolute inset-0 opacity-25"
+          style={`background-image:
+            radial-gradient(circle at 12px 12px, rgba(255,255,255,.35) 1px, transparent 2px);
+            background-size: 26px 26px;`}
+        ></div>
+
+        <div class="relative">
+          <p class="text-xs uppercase tracking-[0.25em] text-slate-300/90">
+            Banque d’heures – soutien technique
+          </p>
+
+          <h3 class="mt-2 text-2xl md:text-3xl font-extrabold text-slate-100">
+            Réservez votre banque de 30h avec <span class="text-sky-300">50% de rabais</span>
+          </h3>
+
+          <p class="mt-3 text-slate-200/90 text-sm md:text-base leading-relaxed max-w-3xl">
+            Une formule simple pour couvrir les demandes récurrentes, obtenir des interventions plus rapidement
+            et améliorer la stabilité de votre environnement TI.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
+              Support remote
+            </span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
+              Déduction à l’usage
+            </span>
+            <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
+              Accélère les demandes
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS -->
+      <section id="details" class="space-y-10">
+
+        <!-- Included / Not included -->
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <section class="h-full rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700 p-8 flex flex-col">
+            <h4 class="text-xl font-semibold text-slate-100 mb-3">Inclus</h4>
+            <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+              {inclus.map((x) => <li>{x}</li>)}
+            </ul>
+          </section>
+
+          <section class="h-full rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700 p-8 flex flex-col">
+            <h4 class="text-xl font-semibold text-slate-100 mb-3">Non inclus</h4>
+            <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+              {nonInclus.map((x) => <li>{x}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <!-- Conditions -->
+        <section class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+          <h4 class="text-xl font-semibold text-slate-100 mb-3">Conditions & fonctionnement</h4>
+          <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+            {conditions.map((x) => <li>{x}</li>)}
+          </ul>
+
+          <p class="text-slate-400 text-xs mt-4">
+            * Les détails exacts (validité, arrondis, horaire de service, etc.) peuvent être précisés dans l’entente.
+          </p>
+        </section>
+
+        <!-- Benefits cards (FIXED spacing/height) -->
+        <section class="grid md:grid-cols-3 gap-6 items-stretch">
+          <div class="h-full rounded-2xl p-6 bg-slate-800/40 border border-slate-700 flex flex-col gap-3">
+            <div class="text-2xl">⚡</div>
+            <h5 class="font-semibold text-slate-100">Plus rapide</h5>
+            <p class="text-slate-300 text-sm">
+              Une banque d’heures facilite la planification et réduit les délais de décision.
+            </p>
+          </div>
+
+          <div class="h-full rounded-2xl p-6 bg-slate-800/40 border border-slate-700 flex flex-col gap-3">
+            <div class="text-2xl">🧾</div>
+            <h5 class="font-semibold text-slate-100">Prévisible</h5>
+            <p class="text-slate-300 text-sm">
+              Une formule claire : vous savez combien d’heures sont disponibles et comment elles sont utilisées.
+            </p>
+          </div>
+
+          <div class="h-full rounded-2xl p-6 bg-slate-800/40 border border-slate-700 flex flex-col gap-3">
+            <div class="text-2xl">🛡️</div>
+            <h5 class="font-semibold text-slate-100">Stabilité</h5>
+            <p class="text-slate-300 text-sm">
+              Idéal pour régler les irritants, renforcer la sécurité et prévenir les problèmes récurrents.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <!-- FORM -->
+      <section id="demande">
+        <div class="rounded-2xl p-10 bg-gradient-to-br from-sky-600 to-indigo-600 text-white shadow-xl border border-sky-500 relative">
+          <h3 class="text-3xl font-semibold mb-3">Profiter de l’offre</h3>
+          <p class="text-lg mb-6">
+            Remplis ce formulaire et on te contacte pour confirmer les modalités (période, portée, démarrage).
+          </p>
+
+          <button
+            id="openPromoBtn"
+            class="inline-block mt-2 px-8 py-3 rounded-xl font-semibold
+                   bg-white text-sky-700 hover:bg-slate-100 transition"
+          >
+            Ouvrir le formulaire
+          </button>
+
+          <div id="promoFormContainer" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 mt-6">
+            <form id="promoForm" class="space-y-4 bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20">
+              <h4 class="text-xl font-semibold mb-2">Demande – Promo banque 30h</h4>
+
+              <label class="block text-sm font-medium">Organisation</label>
+              <input
+                type="text"
+                name="promo_org"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <label class="block text-sm font-medium">Courriel</label>
+              <input
+                type="email"
+                name="promo_email"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Téléphone (optionnel)</label>
+                  <input
+                    type="text"
+                    name="promo_phone"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium">Nb d’utilisateurs (optionnel)</label>
+                  <input
+                    type="number"
+                    name="promo_users"
+                    min="1"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+              </div>
+
+              <label class="block text-sm font-medium">Message</label>
+              <textarea
+                name="promo_message"
+                rows="5"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                placeholder="Ex : vos besoins fréquents, délais souhaités, contexte (télétravail, M365, etc.)"
+              ></textarea>
+
+              <input type="hidden" name="promo_name" value="Promo 50% – Banque 30h soutien technique" />
+              <input type="hidden" name="promo_source" value="promo-30h" />
+
+              <button
+                type="submit"
+                class="mt-3 w-full px-4 py-2 bg-white text-sky-700 rounded-lg font-semibold
+                       hover:bg-slate-100 transition"
+              >
+                Envoyer la demande
+              </button>
+
+              <button
+                type="button"
+                id="closePromoBtn"
+                class="mt-2 w-full px-4 py-2 bg-white/10 text-white rounded-lg font-medium
+                       border border-white/20 hover:bg-white/20 transition"
+              >
+                Fermer
+              </button>
+
+              <p id="promoStatus" class="text-sm text-white/80 mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  const btn = document.getElementById("openPromoBtn");
+  const closeBtn = document.getElementById("closePromoBtn");
+  const panel = document.getElementById("promoFormContainer");
+  const form = document.getElementById("promoForm");
+  const status = document.getElementById("promoStatus");
+
+  if (btn && closeBtn && panel && form && status) {
+    btn.addEventListener("click", () => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = "1";
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      panel.style.maxHeight = "0";
+      panel.style.opacity = "0";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const data = {};
+      for (const [k, v] of fd.entries()) data[k] = v;
+
+      status.textContent = "Envoi…";
+
+      try {
+        const res = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          status.textContent = "Demande envoyée!";
+          form.reset();
+        } else {
+          status.textContent = "Erreur d’envoi.";
+        }
+      } catch (err) {
+        status.textContent = "Erreur réseau.";
+      }
+    });
+  }
+</script>

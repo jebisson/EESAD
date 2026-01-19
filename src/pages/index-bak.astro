@@ -48,6 +48,7 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
         style={`background-color: ${glowColor};`}
       ></div>
 
+
       {/* WAVE */}
       <svg
         viewBox="0 0 1440 320"
@@ -69,108 +70,27 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
 
       {/* Light gradient over the band */}
       <div
-        class="absolute inset-0 bg-gradient-to-b
+        class="absolute inset-0 bg-gradient-to-b 
                from-transparent to-slate-950/40 z-0">
       </div>
 
       {/* SECTION TITLE */}
       <h3
-        class="relative z-20 text-center text-slate-400
+        class="relative z-20 text-center text-slate-400 
                text-sm uppercase tracking-[0.25em] mt-28 mb-8">
         Services offerts et ressources
       </h3>
 
       {/* Ambient glow behind cards */}
       <div
-        class="absolute left-1/2 top-48 -translate-x-1/2 w-[70%] h-32
+        class="absolute left-1/2 top-48 -translate-x-1/2 w-[70%] h-32 
                bg-blue-500/5 blur-3xl rounded-full z-0">
       </div>
 
       {/* CARDS GRID */}
       <div class="relative z-20 mx-auto max-w-6xl px-4 pb-20">
 
-        {/* IMPORTANT: removed md:grid-rows-2 so grid can grow */}
-        <section class="grid gap-8 md:grid-cols-3">
-
-          {/* PROMO – spans 3 cards */}
-          <a
-            href="/promo-30h"
-            class="group relative overflow-hidden rounded-2xl
-                   border border-slate-600/60
-                   bg-slate-900/80
-                   p-8 md:p-10 shadow-md transition-all duration-300
-                   hover:-translate-y-2 hover:scale-[1.01]
-                   hover:border-sky-400/80 hover:shadow-sky-500/30
-                   md:col-span-3"
-          >
-            {/* “Network” background (CSS only) */}
-            <div
-              class="absolute inset-0 opacity-90"
-              style={`background:
-                radial-gradient(900px 260px at 15% 20%, rgba(56,189,248,.35), transparent 60%),
-                radial-gradient(700px 240px at 80% 30%, rgba(99,102,241,.25), transparent 55%),
-                radial-gradient(500px 220px at 55% 85%, rgba(59,130,246,.18), transparent 60%),
-                linear-gradient(to bottom, rgba(2,6,23,.30), rgba(2,6,23,.85));
-              `}
-            ></div>
-
-            {/* Dots overlay */}
-            <div
-              class="pointer-events-none absolute inset-0 opacity-30"
-              style={`background-image:
-                radial-gradient(circle at 12px 12px, rgba(255,255,255,.35) 1px, transparent 2px);
-                background-size: 26px 26px;`}
-            ></div>
-
-            {/* Hover tint */}
-            <div
-              class="pointer-events-none absolute inset-0
-                     bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/20
-                     opacity-0 transition-opacity duration-300
-                     group-hover:opacity-100"
-            ></div>
-
-            <div class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div class="max-w-3xl">
-                <p class="text-xs uppercase tracking-[0.25em] text-slate-300/90">
-                  Promo limitée
-                </p>
-
-                <h3 class="mt-2 text-2xl md:text-3xl font-extrabold text-slate-100">
-                  50% de rabais sur une banque de <span class="text-sky-300">30 heures</span> de soutien technique
-                </h3>
-
-                <p class="mt-3 text-slate-200/90 text-sm md:text-base leading-relaxed">
-                  Idéal pour stabiliser votre environnement, accélérer les demandes et planifier vos améliorations.
-                  Applicable selon l’entente (portée, période et modalités).
-                </p>
-
-                <div class="mt-5 flex flex-wrap items-center gap-3">
-                  <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
-                    Banque : 30h
-                  </span>
-                  <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
-                    Rabais : 50%
-                  </span>
-                  <span class="inline-flex items-center rounded-full bg-white/10 border border-white/15 px-3 py-1 text-xs text-slate-100">
-                    Interventions / soutien
-                  </span>
-                </div>
-              </div>
-
-              <div class="shrink-0">
-                <span
-                  class="inline-flex items-center justify-center
-                         rounded-xl px-6 py-3 font-semibold
-                         bg-gradient-to-r from-sky-400 to-indigo-400
-                         text-slate-900
-                         group-hover:brightness-110 transition"
-                >
-                  Profiter de l’offre →
-                </span>
-              </div>
-            </div>
-          </a>
+        <section class="grid gap-8 md:grid-cols-3 md:grid-rows-2">
 
           {/* CARD 1 */}
           <a
@@ -196,9 +116,9 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1.5"
-                      d="M9 12.75L11.25 15 15 9.75m-3-6.042a48.42 48.42 0 00-6 2.558A2.25
-                         2.25 0 005.25 8.91v4.819a6.75 6.75 0 003.022 5.625l3.095
-                         2.06a.75.75 0 00.816 0l3.095-2.06a6.75 6.75 0 003.022-5.625V8.91a2.25
+                      d="M9 12.75L11.25 15 15 9.75m-3-6.042a48.42 48.42 0 00-6 2.558A2.25 
+                         2.25 0 005.25 8.91v4.819a6.75 6.75 0 003.022 5.625l3.095 
+                         2.06a.75.75 0 00.816 0l3.095-2.06a6.75 6.75 0 003.022-5.625V8.91a2.25 
                          2.25 0 00-1.25-2.132 48.42 48.42 0 00-6-2.558z"
                     />
                   </svg>
@@ -211,7 +131,7 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
               </div>
 
               <span
-                class="mt-4 inline-flex items-center text-sm font-medium
+                class="mt-4 inline-flex items-center text-sm font-medium 
                        text-sky-300 group-hover:text-sky-100"
               >
                 Voir la page →
@@ -227,9 +147,9 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
               link: "/sauvegarde365",
               icon: `
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M12 16.5v-9m0 9l-3-3m3 3l3-3m-.75-6.75a4.5 4.5 0
-                      00-8.456 1.09A3.75 3.75 0 006
-                      13.5h12a3.75 3.75 0 00.206-7.464A4.501 4.501 0
+                  d="M12 16.5v-9m0 9l-3-3m3 3l3-3m-.75-6.75a4.5 4.5 0 
+                      00-8.456 1.09A3.75 3.75 0 006 
+                      13.5h12a3.75 3.75 0 00.206-7.464A4.501 4.501 0 
                       0012.75 6.75z" />
               `,
             },
@@ -245,6 +165,7 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
                        M12 11a2 2 0 110 4 2 2 0 010-4z
                     "
                 />
+
               `,
             },
             {
@@ -275,9 +196,9 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
                      hover:border-sky-400/80 hover:shadow-sky-500/30"
             >
               <div
-                class="pointer-events-none absolute inset-0
+                class="pointer-events-none absolute inset-0 
                        bg-gradient-to-br from-sky-500/0 via-sky-500/0 to-sky-500/20
-                       opacity-0 transition-opacity duration-300
+                       opacity-0 transition-opacity duration-300 
                        group-hover:opacity-100"
               ></div>
 
@@ -319,9 +240,9 @@ const { bandBackground, waveFill, glowColor } = theme.colors;
                    hover:shadow-blue-500/40"
           >
             <div
-              class="pointer-events-none absolute inset-0
-                     bg-gradient-to-br from-white/10 via-blue-400/20 to-blue-700/40
-                     opacity-0 transition-opacity duration-300
+              class="pointer-events-none absolute inset-0 
+                     bg-gradient-to-br from-white/10 via-blue-400/20 to-blue-700/40 
+                     opacity-0 transition-opacity duration-300 
                      group-hover:opacity-100"
             ></div>
 
