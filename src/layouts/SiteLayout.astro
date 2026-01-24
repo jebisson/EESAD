@@ -5,7 +5,7 @@ import { theme } from "../config/theme.js";
 const { title = "Services TI – EÉSAD" } = Astro.props;
 
 // Read colors from theme with hard fallbacks
-const bg = theme?.colors?.background ?? "#020617"; // slate-950
+const bg = theme?.colors?.background ?? "#0b1224"; // slate-950
 const text = theme?.colors?.text ?? "#e5e7eb";      // slate-200
 const accent = theme?.colors?.accent ?? "#38bdf8";  // sky-400
 const border = theme?.colors?.border ?? "#1f2937";  // slate-800
@@ -30,6 +30,7 @@ const waveFill = theme?.colors?.waveFill ?? "#020617";
 
     <style>
       :root {{
+        --page-bg: {bg};
         --band-bg: {bandBg};
         --wave-fill: {waveFill};
       }}
@@ -51,14 +52,16 @@ const waveFill = theme?.colors?.waveFill ?? "#020617";
       </header>
 
       <!-- HERO -->
-      <section class="mx-auto max-w-4xl px-4 text-center relative z-10">
-        <slot name="hero" />
-      </section>
+      <section class="mx-auto max-w-4xl px-4 text-center relative z-10 pb-4">
+  <slot name="hero" />
+</section>
+
 
       <!-- PAGE CONTENT -->
-      <div class="flex-1">
-        <slot />
+      <div class="flex-1" style={`--page-bg: ${bg};`}>
+       <slot />
       </div>
+
 
       <!-- FOOTER -->
       <footer
