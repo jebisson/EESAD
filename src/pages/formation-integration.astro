@@ -1,0 +1,385 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import "../styles/global.css";
+import logo from "../assets/eesad-logo.png";
+import { theme } from "../config/theme.js";
+
+const { bandBackground, waveFill, glowColor } = theme.colors;
+
+const offres = [
+  {
+    title: "Onboarding – nouveaux employés",
+    desc: "Accueil TI, configuration de poste, accès Microsoft 365, bonnes pratiques et première semaine sans friction.",
+    bullets: [
+      "Checklist d’arrivée (comptes, licences, accès, groupes)",
+      "Configuration M365 (Outlook/Teams/OneDrive) et appareil",
+      "Démo des outils internes (SharePoint/Teams, procédures)",
+      "Validation finale + mini guide remis à l’employé",
+    ],
+  },
+  {
+    title: "Formations Microsoft 365",
+    desc: "Ateliers courts et concrets adaptés à votre réalité (présentiel ou Teams).",
+    bullets: [
+      "Teams : canaux, réunions, partage, bonnes pratiques",
+      "SharePoint/OneDrive : structure, droits, partage externe",
+      "Outlook : courriels, calendrier, délégation, règles",
+      "Hygiène numérique : phishing, MFA, mots de passe",
+    ],
+  },
+  {
+    title: "Formation cybersécurité (pratique)",
+    desc: "Réduire les incidents et renforcer les réflexes : simple, clair, applicable.",
+    bullets: [
+      "Reconnaître les courriels frauduleux",
+      "Gestion des mots de passe et MFA",
+      "Partage sécuritaire de documents",
+      "Que faire en cas de doute / incident",
+    ],
+  },
+];
+
+const formats = [
+  { t: "Session express", d: "30 à 60 minutes (ciblée sur un outil ou un besoin)" },
+  { t: "Atelier équipe", d: "60 à 90 minutes (avec questions et cas réels)" },
+  { t: "Parcours onboarding", d: "Séquence sur 1–2 semaines pour nouveaux employés" },
+  { t: "Capsules / guides", d: "Mini guides PDF + procédures adaptées à votre contexte" },
+];
+
+const inclus = [
+  "Matériel de formation (supports, checklist, mini guides)",
+  "Adaptation au contexte (structure Teams/SharePoint, rôles, réalité terrain)",
+  "Période de questions/réponses",
+  "Recommandations d’amélioration (quick wins) après la session",
+];
+
+const nonInclus = [
+  "Interventions techniques majeures (projets, migrations) — sur soumission",
+  "Support 24/7 (sauf entente)",
+  "Déplacements (si requis : sur entente)",
+];
+---
+
+<SiteLayout title="Formations & intégration – Services TI">
+
+  <!-- HEADER SLOT -->
+  <div slot="header" class="relative mx-auto flex flex-col items-center gap-3 z-10">
+    <img src={logo.src} alt="EÉSAD" class="h-20 w-auto" />
+    <h1 class="text-sm tracking-[0.25em] text-slate-400 uppercase">
+      Formations & intégration
+    </h1>
+  </div>
+
+  <!-- HERO SLOT -->
+  <section slot="hero" class="mx-auto max-w-4xl px-4 text-center relative z-10">
+    <div
+      class="absolute left-1/2 top-10 -translate-x-1/2
+             w-[70%] md:w-[60%] h-24
+             bg-gradient-to-r from-sky-500/25 via-indigo-500/25 to-purple-500/25
+             blur-[70px] opacity-80"
+    ></div>
+
+    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-slate-100">
+      Accueillir, former et rendre autonome rapidement
+    </h2>
+
+    <p class="mt-4 text-lg text-slate-300">
+      On aide vos nouveaux employés à démarrer du bon pied et vos équipes à mieux utiliser
+      Microsoft 365 — avec des formations courtes, claires et adaptées à votre réalité.
+    </p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a
+        href="#demande"
+        class="inline-flex items-center px-6 py-3 rounded-xl font-semibold
+               bg-gradient-to-r from-sky-400 to-indigo-400
+               text-slate-900 hover:brightness-110 transition"
+      >
+        Demander une formation →
+      </a>
+
+      <a
+        href="#offres"
+        class="inline-flex items-center px-6 py-3 rounded-xl font-semibold
+               bg-slate-800/60 border border-slate-700 text-slate-200
+               hover:bg-slate-700 hover:border-sky-400 transition"
+      >
+        Voir les offres
+      </a>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-2 justify-center">
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Nouveaux employés
+      </span>
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Microsoft 365
+      </span>
+      <span class="px-4 py-2 rounded-full text-sm bg-slate-800/50 border border-slate-700 text-slate-200">
+        Cybersécurité
+      </span>
+    </div>
+  </section>
+
+  <!-- FIXED BACK LINK -->
+  <a
+    href="/"
+    class="fixed right-6 top-5 z-50
+           inline-flex items-center px-4 py-2 rounded-lg
+           bg-slate-800/80 border border-slate-700
+           text-slate-200 text-sm font-medium
+           hover:bg-slate-700 hover:border-sky-400 hover:text-sky-100
+           shadow-lg backdrop-blur
+           transition-all"
+  >
+    ← Retour à la page Services TI
+  </a>
+
+  <!-- WAVE + CONTENT BAND -->
+  <section class="relative w-full overflow-hidden -mt-20" style={`background-color: ${bandBackground};`}>
+
+    <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 bg-sky-500/10 blur-3xl z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/40 z-[1]"></div>
+
+    <svg
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      class="pointer-events-none absolute top-0 left-0 w-full h-96 z-[2]"
+      style={`color: ${waveFill};`}
+      aria-hidden="true"
+    >
+      <path fill="currentColor" d="M0,220 C240,140 480,300 720,220 C960,140 1200,300 1440,220 L1440,0 L0,0 Z" />
+    </svg>
+
+    <div class="absolute top-40 left-0 right-0 mx-auto w-[90%] h-40 blur-3xl z-0" style={`background-color: ${glowColor};`}></div>
+
+    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-16 mt-28">
+
+      <!-- OFFERS -->
+      <section id="offres" class="space-y-6">
+        <h3 class="text-2xl font-semibold text-slate-100">
+          Offres
+        </h3>
+
+        <div class="grid md:grid-cols-3 gap-6 items-stretch">
+          {offres.map((o) => (
+            <div class="h-full rounded-2xl p-6 bg-slate-800/40 border border-slate-700 flex flex-col gap-3">
+              <h4 class="text-lg font-semibold text-sky-300">{o.title}</h4>
+              <p class="text-slate-300 text-sm">{o.desc}</p>
+              <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+                {o.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FORMATS -->
+      <section class="space-y-6">
+        <h3 class="text-2xl font-semibold text-slate-100">Formats</h3>
+
+        <div class="grid md:grid-cols-4 gap-6 items-stretch">
+          {formats.map((f) => (
+            <div class="h-full rounded-2xl p-6 bg-slate-800/40 border border-slate-700 flex flex-col gap-2">
+              <p class="text-slate-100 font-semibold">{f.t}</p>
+              <p class="text-slate-300 text-sm">{f.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- INCLUDED / NOT INCLUDED -->
+      <section class="grid md:grid-cols-2 gap-8 items-stretch">
+        <section class="h-full rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700 p-8 flex flex-col">
+          <h4 class="text-xl font-semibold text-slate-100 mb-3">Inclus</h4>
+          <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+            {inclus.map((x) => <li>{x}</li>)}
+          </ul>
+        </section>
+
+        <section class="h-full rounded-2xl bg-slate-800/40 backdrop-blur border border-slate-700 p-8 flex flex-col">
+          <h4 class="text-xl font-semibold text-slate-100 mb-3">Non inclus</h4>
+          <ul class="list-disc ml-6 space-y-2 text-slate-300 text-sm">
+            {nonInclus.map((x) => <li>{x}</li>)}
+          </ul>
+        </section>
+      </section>
+
+      <!-- CTA + FORM -->
+      <section id="demande">
+        <div class="rounded-2xl p-10 bg-gradient-to-br from-sky-600 to-indigo-600 text-white shadow-xl border border-sky-500 relative">
+          <h3 class="text-3xl font-semibold mb-3">Demander une formation / intégration</h3>
+          <p class="text-lg mb-6">
+            Décris ton besoin (onboarding, Teams, SharePoint, cybersécurité). On revient avec une proposition simple.
+          </p>
+
+          <button
+            id="openTrainBtn"
+            class="inline-flex items-center px-8 py-3 rounded-xl font-semibold
+                   bg-white text-sky-700 hover:bg-slate-100 transition"
+          >
+            Ouvrir le formulaire
+          </button>
+
+          <div id="trainFormContainer" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 mt-6">
+            <form id="trainForm" class="space-y-4 bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20">
+
+              <h4 class="text-xl font-semibold mb-2">Demande – Formations & intégration</h4>
+
+              <label class="block text-sm font-medium">Organisation</label>
+              <input
+                type="text"
+                name="train_org"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <label class="block text-sm font-medium">Courriel</label>
+              <input
+                type="email"
+                name="train_email"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+              />
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Téléphone (optionnel)</label>
+                  <input
+                    type="text"
+                    name="train_phone"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium">Type</label>
+                  <select
+                    name="train_type"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 text-white border border-white/30
+                           focus:ring-2 focus:ring-white focus:outline-none"
+                  >
+                    <option class="bg-white text-slate-900" value="onboarding">Onboarding – nouveaux employés</option>
+                    <option class="bg-white text-slate-900" value="m365">Formation Microsoft 365</option>
+                    <option class="bg-white text-slate-900" value="security">Formation cybersécurité</option>
+                    <option class="bg-white text-slate-900" value="custom">Sur mesure</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium">Nb de personnes (optionnel)</label>
+                  <input
+                    type="number"
+                    name="train_people"
+                    min="1"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                           placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium">Format souhaité</label>
+                  <select
+                    name="train_format"
+                    class="w-full rounded-lg px-3 py-2 bg-white/20 text-white border border-white/30
+                           focus:ring-2 focus:ring-white focus:outline-none"
+                  >
+                    <option class="bg-white text-slate-900" value="express">Session express (30–60 min)</option>
+                    <option class="bg-white text-slate-900" value="atelier">Atelier équipe (60–90 min)</option>
+                    <option class="bg-white text-slate-900" value="parcours">Parcours onboarding (1–2 semaines)</option>
+                    <option class="bg-white text-slate-900" value="capsules">Capsules / guides</option>
+                  </select>
+                </div>
+              </div>
+
+              <label class="block text-sm font-medium">Détails</label>
+              <textarea
+                name="train_details"
+                rows="5"
+                required
+                class="w-full rounded-lg px-3 py-2 bg-white/20 border border-white/30
+                       placeholder-white/40 text-white focus:ring-2 focus:ring-white"
+                placeholder="Ex : équipe 12 personnes, besoins Teams/SharePoint, onboarding de 3 nouveaux employés, etc."
+              ></textarea>
+
+              <input type="hidden" name="train_source" value="formation-integration" />
+
+              <button
+                type="submit"
+                class="mt-3 w-full px-4 py-2 bg-white text-sky-700 rounded-lg font-semibold
+                       hover:bg-slate-100 transition"
+              >
+                Envoyer la demande
+              </button>
+
+              <button
+                type="button"
+                id="closeTrainBtn"
+                class="mt-2 w-full px-4 py-2 bg-white/10 text-white rounded-lg font-medium
+                       border border-white/20 hover:bg-white/20 transition"
+              >
+                Fermer
+              </button>
+
+              <p id="trainStatus" class="text-sm text-white/80 mt-2"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  const btn = document.getElementById("openTrainBtn");
+  const closeBtn = document.getElementById("closeTrainBtn");
+  const panel = document.getElementById("trainFormContainer");
+  const form = document.getElementById("trainForm");
+  const status = document.getElementById("trainStatus");
+
+  if (btn && closeBtn && panel && form && status) {
+    btn.addEventListener("click", () => {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.opacity = "1";
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      panel.style.maxHeight = "0";
+      panel.style.opacity = "0";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const data = {};
+      for (const [k, v] of fd.entries()) data[k] = v;
+
+      status.textContent = "Envoi…";
+
+      try {
+        const res = await fetch("/api/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          status.textContent = "Demande envoyée!";
+          form.reset();
+        } else {
+          status.textContent = "Erreur d’envoi.";
+        }
+      } catch (err) {
+        status.textContent = "Erreur réseau.";
+      }
+    });
+  }
+</script>
