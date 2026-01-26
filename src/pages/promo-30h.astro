@@ -133,7 +133,7 @@ const conditions = [
       style={`background-color: ${glowColor};`}
     ></div>
 
-    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-16 mt-28">
+    <div class="relative z-[3] mx-auto max-w-6xl px-4 pb-20 space-y-8 mt-28">
 
       <!-- Promo Banner Card -->
       <section class="group relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/80 p-8 md:p-10 shadow-md">
@@ -148,12 +148,11 @@ const conditions = [
           `}
         ></div>
 
-        <div
-          class="pointer-events-none absolute inset-0 opacity-25"
-          style={`background-image:
-            radial-gradient(circle at 12px 12px, rgba(255,255,255,.35) 1px, transparent 2px);
-            background-size: 26px 26px;`}
-        ></div>
+        <div class="pointer-events-none absolute inset-0 bg-cover bg-center"
+              style="background-image:url('/images/promo-network.jpg')">
+        </div>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/60 to-slate-950/85"></div>
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/20 to-slate-950/70"></div>
 
         <div class="relative">
           <p class="text-xs uppercase tracking-[0.25em] text-slate-300/90">
@@ -184,7 +183,7 @@ const conditions = [
       </section>
 
       <!-- DETAILS -->
-      <section id="details" class="space-y-10">
+      <section id="details" class="space-y-5">
 
         <!-- Included / Not included -->
         <div class="grid md:grid-cols-2 gap-8 items-stretch">
