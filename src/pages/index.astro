@@ -245,25 +245,26 @@ const cards = [
               </div>
             </div>
 
-            <!-- PHOTO MIGUEL intégrée -->
-            <div class="pointer-events-none absolute right-6 md:right-6 bottom-0 z-[2]">
-              <!-- halo doux -->
-              <div class="absolute -inset-10 rounded-full bg-sky-400/10 blur-3xl opacity-70"></div>
+          <!-- PHOTO MIGUEL (mobile = dessous / desktop = à droite collé bas) -->
+          <div class="relative mt-6 flex justify-center md:mt-0 md:block md:absolute md:right-10 md:bottom-0 z-[2] pointer-events-none">
+            <!-- halo doux -->
+            <div class="absolute -inset-10 rounded-full bg-sky-400/10 blur-3xl opacity-70"></div>
 
-              <img
-                src="/images/miguel.png"
-                alt="Miguel – formateur"
-                loading="lazy"
-                class="
-                  relative
-                  h-[220px] md:h-[320px]
-                  w-auto
-                  object-contain
-                  drop-shadow-[0_25px_40px_rgba(0,0,0,0.45)]
-                  [mask-image:linear-gradient(to_top,black_85%,transparent_100%)]
-                "
-              />
-            </div>
+            <img
+              src="/images/miguel.png"
+              alt="Miguel – formateur"
+              loading="lazy"
+              class="
+                relative
+                h-[180px] sm:h-[210px] md:h-[320px]
+                w-auto
+                object-contain
+                drop-shadow-[0_25px_40px_rgba(0,0,0,0.45)]
+                [mask-image:linear-gradient(to_top,black_85%,transparent_100%)]
+              "
+            />
+          </div>
+
           </a>
 
 
