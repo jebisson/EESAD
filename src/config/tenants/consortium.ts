@@ -1,14 +1,14 @@
-import logo from "../../assets/org2-logo.png";
+import logo from "../../assets/consortium.png";
 
 export const org2 = {
-  id: "org2",
-  name: "Organisation 2",
+  id: "consortium",
+  name: "Consortium",
   logo,
   colors: {
     background: "#071a10",
-    bandBackground: "#0f2f1c",
+    bandBackground: "#bb9e1d",
     waveFill: "#071a10",
-    glowColor: "rgba(34, 197, 94, 0.35)",
-    accent: "#22c55e",
+    glowColor: "rgba(93, 95, 94, 0.35)",
+    accent: "#292b2a",
   },
 } as const;
